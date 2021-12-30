@@ -1,0 +1,134 @@
+<com.google.android.material.card.MaterialCardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true">
+    <!--
+      android:layout_margin="7dp"
+      app:cardElevation="1dp"
+      android:translationZ="1dp"
+      app:strokeWidth="0.2dp"
+      app:strokeColor="@color/back_button"
+      app:cardCornerRadius="5dp"
+      -->
+    <!--
+        android:elevation="1dp"
+        android:translationZ="3dp"
+     -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:dividerThickness="5.8dp"
+            app:dividerColor="#B6B4B4"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title, secondary and supporting text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="8"
+                android:orientation="horizontal">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/post_owner_pic"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@drawable/profile"
+                    app:civ_border_color="#3f51b5"
+                    android:layout_weight="1"
+                    app:civ_border_width="1dp"
+                    app:civ_shadow="true"
+                    android:clickable="true"
+                    app:civ_shadow_radius="0.5dp"
+                    app:civ_shadow_color="#3f51b5"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="15dp"
+                        android:textColor="#48464A"
+                        android:clickable="true"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:orientation="horizontal">
+
+                        <!-- comment will be here -->
+                        <TextView
+                            android:id="@+id/post_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:clickable="true"
+                            android:text="@string/supporting_text"
+                            android:textAppearance="?attr/textAppearanceBody1"
+                            android:textColor="#48464A"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+        <!-- Media
+        <ImageView
+            android:id="@+id/post_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/media"
+            android:scaleType="fitXY"
+            android:clickable="true"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="@string/content_description_media"
+            />
+        -->
+
+
+
+        <!-- Buttons -->
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

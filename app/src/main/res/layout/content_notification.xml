@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <!-- Scrollable content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:orientation="vertical">
+
+
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+            <include layout="@layout/raw_notification_item" />
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

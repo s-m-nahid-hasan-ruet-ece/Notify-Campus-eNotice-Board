@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/option_1"
+        android:title="@string/dept_option_1" />
+    <item android:id="@+id/option_2"
+        android:title="@string/dept_option_2" />
+    <item android:id="@+id/option_3"
+        android:title="@string/dept_option_3" />
+    <item android:id="@+id/option_4"
+        android:title="@string/dept_option_4" />
+    <item android:id="@+id/option_5"
+        android:title="@string/dept_option_5" />
+    <item android:id="@+id/option_6"
+        android:title="@string/dept_option_6" />
+    <item android:id="@+id/option_7"
+        android:title="@string/dept_option_7" />
+    <item android:id="@+id/option_8"
+        android:title="@string/dept_option_8" />
+    <item android:id="@+id/option_9"
+        android:title="@string/dept_option_9" />
+    <item android:id="@+id/option_10"
+        android:title="@string/dept_option_10" />
+    <item android:id="@+id/option_11"
+        android:title="@string/dept_option_11" />
+    <item android:id="@+id/option_12"
+        android:title="@string/dept_option_12" />
+    <item android:id="@+id/option_13"
+        android:title="@string/dept_option_13" />
+    <item android:id="@+id/option_14"
+        android:title="@string/dept_option_14" />
+    <item android:id="@+id/option_15"
+        android:title="@string/dept_option_15" />
+
+</menu>
