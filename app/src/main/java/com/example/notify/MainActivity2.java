@@ -70,14 +70,7 @@ public class MainActivity2 extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
-        FloatingActionButton fab_btn = (FloatingActionButton)findViewById(R.id.fab);
 
-        fab_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                 startPostActivity();
-            }
-        });
 
     }
 
@@ -97,10 +90,6 @@ public class MainActivity2 extends AppCompatActivity {
                 case R.id.calendar:
                     CalendarFragment calendarFragment = new CalendarFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,calendarFragment).commit();
-                    return true;
-                case R.id.notification:
-                       NotificationFragment notificationFragment = new NotificationFragment();
-                       fragmentManager.beginTransaction().replace(R.id.fragment_container,notificationFragment).commit();
                     return true;
                 case R.id.profile:
                     ProfileFragment profileFragment = new ProfileFragment();

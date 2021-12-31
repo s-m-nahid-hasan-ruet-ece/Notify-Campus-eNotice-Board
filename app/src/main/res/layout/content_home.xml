@@ -17,6 +17,9 @@
             android:background="#00FFFFFF"
             android:orientation="vertical">
 
+            <include layout="@layout/raw_edit_post_layout"/>
+
+
 
 
             <androidx.recyclerview.widget.RecyclerView

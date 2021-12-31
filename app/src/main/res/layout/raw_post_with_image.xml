@@ -2,12 +2,11 @@
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="7dp"
+    android:layout_marginTop="15dp"
     app:cardElevation="1dp"
-    android:translationZ="1dp"
+    android:translationZ="2dp"
     app:strokeWidth="0.2dp"
     app:strokeColor="@color/back_button"
-    app:cardCornerRadius="5dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:focusable="true">
@@ -172,30 +171,39 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="6"
+            android:weightSum="8"
             android:layout_marginLeft="20dp"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/materialButton"
                 style="?attr/borderlessButtonStyle"
-                android:layout_width="30dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 app:icon="@drawable/like_icon"
                 app:iconTint="#605E61"
+                android:text="Like"
+                android:textAlignment="textStart"
+                app:iconPadding="20dp"
+                android:textAllCaps="false"
+                android:textColor="#605E61"
+                app:rippleColor="#E91E63"
                 android:clickable="true"
                 android:focusable="true"
-                />
+                android:background="?android:attr/selectableItemBackground"
+                android:foreground="?android:attr/selectableItemBackground"/>
 
             <com.google.android.material.button.MaterialButton
                 style="?attr/borderlessButtonStyle"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:textColor="#48464A"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 app:icon="@drawable/comment_icon"
                 app:iconTint="#605E61"
+                android:text="Comment"
+                android:textAllCaps="false"
+                android:textColor="#605E61"
                 android:clickable="true"
                 android:focusable="true"/>
 
@@ -204,32 +212,14 @@
                 style="?attr/borderlessButtonStyle"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 app:icon="@drawable/alarm_black"
                 app:iconTint="#605E61"
+                android:text="Reminder"
+                android:textAllCaps="false"
+                android:textColor="#605E61"
                 android:clickable="true"
                 android:focusable="true"/>
-
-            <com.google.android.material.button.MaterialButton
-                style="?attr/borderlessButtonStyle"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="#48464A"
-                app:icon="@drawable/mic_icon"
-                app:iconTint="#605E61"
-                android:clickable="true"
-                android:focusable="true"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/seen_by"
-                android:layout_weight="2"
-                android:textSize="10dp"
-                android:textColor="#605E61"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:gravity="center" />
         </LinearLayout>
 
 
