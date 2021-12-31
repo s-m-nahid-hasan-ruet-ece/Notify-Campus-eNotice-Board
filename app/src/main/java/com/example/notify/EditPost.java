@@ -148,6 +148,14 @@ public class EditPost extends Fragment{
         Glide.with(this).load(currentUser.getPhotoUrl()).into(profile_pic);
 
 
+        toolbar_post.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUI();
+            }
+        });
+
+
         toolbar_post.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -281,7 +289,6 @@ public class EditPost extends Fragment{
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"File",Toast.LENGTH_SHORT).show();
                 checkAndRequestForPermission(2);
-
             }
         });
 

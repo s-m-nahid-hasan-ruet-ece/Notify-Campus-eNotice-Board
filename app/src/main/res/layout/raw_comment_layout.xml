@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:dividerThickness="5.8dp"
+            app:dividerThickness="1dp"
             app:dividerColor="#B6B4B4"
             />
 
@@ -47,8 +47,9 @@
                 android:orientation="horizontal">
                 <com.mikhaellopez.circularimageview.CircularImageView
                     android:id="@+id/post_owner_pic"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="5dp"
                     app:srcCompat="@drawable/profile"
                     app:civ_border_color="#3f51b5"
                     android:layout_weight="1"
@@ -61,13 +62,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="6"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/comment_background"
                     android:orientation="vertical">
                     <TextView
                         android:id="@+id/user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/title"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="8dp"
                         android:textSize="15dp"
                         android:textColor="#48464A"
                         android:clickable="true"
@@ -76,7 +80,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="7dp"
                         android:orientation="horizontal">
 
                         <!-- comment will be here -->
@@ -84,7 +89,8 @@
                             android:id="@+id/post_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="13dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginLeft="10dp"
                             android:clickable="true"
                             android:text="@string/supporting_text"
                             android:textAppearance="?attr/textAppearanceBody1"

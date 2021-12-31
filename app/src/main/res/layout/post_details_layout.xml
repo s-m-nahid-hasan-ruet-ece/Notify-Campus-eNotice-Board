@@ -247,7 +247,7 @@
                     />
 
 
-                <include layout="@layout/raw_comment_layout"/>
+                <include layout="@layout/raw_edit_comment_layout"/>
                 <include layout="@layout/raw_comment_layout"/>
                 <include layout="@layout/raw_comment_layout"/>
                 <include layout="@layout/raw_comment_layout"/>

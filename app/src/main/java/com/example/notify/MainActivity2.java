@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -26,6 +27,10 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     //private ActionBar toolbar;
+    MaterialToolbar toolbar_home;
+    View item_filter_btn;
+    View item_search_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +42,10 @@ public class MainActivity2 extends AppCompatActivity {
         fragmentManager.beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
 
 
-        MaterialToolbar toolbar_home = (MaterialToolbar)findViewById(R.id.topAppBar);
+        toolbar_home = (MaterialToolbar)findViewById(R.id.topAppBar);
         setSupportActionBar(toolbar_home);
+
+        item_filter_btn = findViewById(R.id.filter_btn);
 
 
         toolbar_home.setNavigationOnClickListener(new View.OnClickListener() {
@@ -84,16 +91,24 @@ public class MainActivity2 extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.home:
+                    item_filter_btn.setVisibility(View.VISIBLE);
+                    toolbar_home.setNavigationIcon(R.drawable.search);
                     HomeFragment homeFragment = new HomeFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
                     return true;
                 case R.id.calendar:
                     CalendarFragment calendarFragment = new CalendarFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,calendarFragment).commit();
+                    item_filter_btn.setVisibility(View.GONE);
+                    toolbar_home.setNavigationIcon(null);
+
+
                     return true;
                 case R.id.profile:
                     ProfileFragment profileFragment = new ProfileFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,profileFragment).commit();
+                    item_filter_btn.setVisibility(View.GONE);
+                    toolbar_home.setNavigationIcon(null);
                     return true;
             }
             return false;

@@ -219,4 +219,3 @@ public class post extends AppCompatActivity implements EditPost.OnClickOptionLis
 
 
 }
-
