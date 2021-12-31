@@ -1,0 +1,93 @@
+<com.google.android.material.card.MaterialCardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="1dp"
+    android:translationZ="1dp"
+    app:strokeWidth="0.1dp"
+    app:strokeColor="#9F9F9F"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="7dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title, secondary and supporting text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="18"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/photo_video_btn"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    app:iconGravity="start"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_weight="1"
+                    app:icon="@drawable/photo_icon"
+                    app:iconTintMode="multiply"
+                    android:focusable="true" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:hint="@string/write_a_comment"
+                            android:textAllCaps="false"
+                            android:textColorHint="#787575"
+                            android:textColor="#787575"
+                            android:textSize="15dp"
+                            android:background="@drawable/edittext_button_style_rounded"
+                            android:id="@+id/create_post"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="20"
+                            android:textAlignment="viewStart"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="start"
+                            android:layout_marginStart="10dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/photo_video_btn1"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:iconGravity="start"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_weight="1"
+                    app:icon="@drawable/send_icon"
+                    app:iconTint="#78797A"
+                    app:iconTintMode="multiply"
+                    android:focusable="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

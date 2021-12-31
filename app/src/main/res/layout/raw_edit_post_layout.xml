@@ -1,0 +1,78 @@
+<com.google.android.material.card.MaterialCardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="2dp"
+    android:translationZ="1dp"
+    app:strokeWidth="0.2dp"
+    app:strokeColor="@color/back_button"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title, secondary and supporting text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="8"
+                android:orientation="horizontal">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/post_owner_pic"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/profile"
+                    app:civ_border_color="#3f51b5"
+                    android:layout_weight="2"
+                    app:civ_border_width="1dp"
+                    android:layout_gravity="center"
+                    app:civ_shadow="true"
+                    android:clickable="true"
+                    app:civ_shadow_radius="0.5dp"
+                    app:civ_shadow_color="#3f51b5"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:text="@string/write_a_notice"
+                            android:textAllCaps="false"
+                            android:textColor="#787575"
+                            android:textSize="15dp"
+                            android:background="@drawable/edittext_button_style_rounded"
+                            android:id="@+id/create_post"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="20"
+                            android:textAlignment="viewStart"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="start"
+                            android:layout_marginStart="10dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
