@@ -86,7 +86,7 @@ public class PostDetails extends AppCompatActivity {
        // w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         //getSupportActionBar().hide();
 
-        //rvComment = findViewById(R.id.rv_comment);
+        rvComment = findViewById(R.id.rv_comment);
         imgPost =findViewById(R.id.post_pic);
         imgUserPost = findViewById(R.id.post_owner_pic);
         //imgCurrentUser = findViewById(R.id.post_detail_currentuser_img);
@@ -94,7 +94,7 @@ public class PostDetails extends AppCompatActivity {
        // txtPostTitle = findViewById(R.id.post_detail_title);
         postOwnerUsername = findViewById(R.id.post_owner_name);
         txtPostDesc = findViewById(R.id.post_text);
-       // txtPostDateName = findViewById(R.id.post_detail_date_name);
+        txtPostDateName = findViewById(R.id.post_time);
 
         editTextComment = findViewById(R.id.edit_comment);
         btnAddComment = findViewById(R.id.post_comment_btn);
@@ -107,7 +107,7 @@ public class PostDetails extends AppCompatActivity {
 
 
 
-/*
+
 
         btnAddComment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +120,7 @@ public class PostDetails extends AppCompatActivity {
                 String uname = firebaseUser.getDisplayName();
                 String uimg = firebaseUser.getPhotoUrl().toString();
                 Comment comment = new Comment(comment_content,uid,uimg,uname);
+
 
                 commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -140,7 +141,7 @@ public class PostDetails extends AppCompatActivity {
             }
         });
 
-*/
+
 
         String postImage = getIntent().getExtras().getString("postImage") ;
         Glide.with(this).load(postImage).into(imgPost);
@@ -158,14 +159,15 @@ public class PostDetails extends AppCompatActivity {
         txtPostDesc.setText(postDescription);
 
 
-    //    Glide.with(this).load(firebaseUser.getPhotoUrl()).into(imgCurrentUser);
-    //    PostKey = getIntent().getExtras().getString("postKey");
+        //Glide.with(this).load(firebaseUser.getPhotoUrl()).into(imgCurrentUser);
+        PostKey = getIntent().getExtras().getString("postKey");
 
-    //    String date = timestampToString(getIntent().getExtras().getLong("postDate"));
-    //    txtPostDateName.setText(date);
+        String date = timestampToString(getIntent().getExtras().getLong("postDate"));
+        txtPostDateName.setText(date);
 
 
-    //    inirvComment();
+
+       inirvComment();
 
 
     }

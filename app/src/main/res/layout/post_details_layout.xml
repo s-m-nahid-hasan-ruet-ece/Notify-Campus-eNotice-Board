@@ -104,6 +104,7 @@
                                     android:textAppearance="?attr/textAppearanceBody2"
                                     android:gravity="center_horizontal" />
                                 <TextView
+                                    android:id="@+id/post_time"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/post_time"
@@ -247,25 +248,10 @@
 
 
                 <include layout="@layout/raw_edit_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
-                <include layout="@layout/raw_comment_layout"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
 
             </LinearLayout>

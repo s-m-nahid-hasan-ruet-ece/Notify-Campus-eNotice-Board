@@ -1,5 +1,4 @@
 package com.example.notify;
-
 import android.content.Context;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
@@ -7,13 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
-
-
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -42,7 +37,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
         Glide.with(mContext).load(mData.get(position).getUimg()).into(holder.img_user);
         holder.tv_name.setText(mData.get(position).getUname());
         holder.tv_content.setText(mData.get(position).getContent());
-        holder.tv_date.setText(timestampToString((Long)mData.get(position).getTimestamp()));
+        //holder.tv_date.setText(timestampToString((Long)mData.get(position).getTimestamp()));
 
     }
 
@@ -61,7 +56,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
             img_user = itemView.findViewById(R.id.comment_owner_pic);
             tv_name = itemView.findViewById(R.id.user_name);
             tv_content = itemView.findViewById(R.id.post_text);
-            tv_date = itemView.findViewById(R.id.comment_date);
+            //tv_date = itemView.findViewById(R.id.comment_date);
         }
     }
 
