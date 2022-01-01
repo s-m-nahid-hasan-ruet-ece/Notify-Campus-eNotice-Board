@@ -1,11 +1,7 @@
-<com.google.android.material.card.MaterialCardView xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="1dp"
-    android:translationZ="1dp"
-    app:strokeWidth="0.1dp"
-    app:strokeColor="#9F9F9F"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:focusable="true">
@@ -14,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
+        android:layout_marginTop="10dp"
         android:padding="7dp"
         android:orientation="vertical">
 
@@ -61,7 +58,7 @@
                             android:textColor="#787575"
                             android:textSize="15dp"
                             android:background="@drawable/edittext_button_style_rounded"
-                            android:id="@+id/create_post"
+                            android:id="@+id/edit_comment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="20"
@@ -73,7 +70,7 @@
                     </LinearLayout>
                 </LinearLayout>
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/photo_video_btn1"
+                    android:id="@+id/post_comment_btn"
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -90,4 +87,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

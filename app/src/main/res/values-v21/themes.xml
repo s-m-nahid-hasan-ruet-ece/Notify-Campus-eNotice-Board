@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Notify" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#58A4E6</item>
+        <item name="colorPrimaryDark">#58A4E6</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="android:statusBarColor">#58A4E6</item>
+
+        <!-- Customize your theme here.
+                <item name="android:windowFullscreen">true</item>
+        -->
+
+    </style>
+
+
+
+
+
+
+</resources>

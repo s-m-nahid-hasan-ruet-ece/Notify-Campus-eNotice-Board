@@ -9,16 +9,17 @@ public class PostData {
     private String description;
     private String picture;
     private String userId;
+    private String userName;
     private String userPhoto;
     private Object timeStamp ;
 
 
-    public PostData(String title, String picture, String userId, String userPhoto) {
+    public PostData(String description, String picture, String userName, String userPhoto) {
         String post;
-        this.title = title;
-       // this.description = description;
+        //this.title = title;
+        this.description = description;
         this.picture = picture;
-        this.userId = userId;
+        this.userName = userName;
         this.userPhoto = userPhoto;
         this.timeStamp = ServerValue.TIMESTAMP;
     }
@@ -50,6 +51,10 @@ public class PostData {
 
     public String getUserId() {
         return userId;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 
     public String getUserPhoto() {

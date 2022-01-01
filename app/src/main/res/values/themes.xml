@@ -9,6 +9,8 @@
         <item name="colorPrimary">#58A4E6</item>
         <item name="colorPrimaryDark">#58A4E6</item>
         <item name="colorAccent">@color/teal_200</item>
+
+
         <!-- Customize your theme here.
                 <item name="android:windowFullscreen">true</item>
         -->
@@ -120,6 +122,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">#252323</item>
+        <item name="colorPrimaryDark">#58A4E6</item>
         <item name="colorSecondary">@color/my_app_secondary_color</item>
         <item name="android:colorBackground">@color/white</item>
         <item name="colorError">#3E70EF</item>

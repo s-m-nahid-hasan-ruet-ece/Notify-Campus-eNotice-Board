@@ -41,16 +41,16 @@ public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) 
 public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
 
-    String text = mData.get(position).getTitle();
+    String text = mData.get(position).getDescription();
     if (text.length()>220) {
         text=text.substring(0,220)+"...";
         holder.tvTitle.setText(Html.fromHtml(text+"<font color='#808080'> View More</font>"));
     }
     else
-        holder.tvTitle.setText(mData.get(position).getTitle());
+        holder.tvTitle.setText(mData.get(position).getDescription());
 
 
-        holder.userName.setText(mData.get(position).getUserId());
+        holder.userName.setText(mData.get(position).getUserName());
         Glide.with(mContext).load(mData.get(position).getPicture()).into(holder.imgPost);
         Glide.with(mContext).load(mData.get(position).getUserPhoto()).into(holder.imgPostProfile);
 
@@ -83,11 +83,12 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 Intent postDetailActivity = new Intent(mContext,PostDetails.class);
                 int position = getAdapterPosition();
 
-                postDetailActivity.putExtra("title",mData.get(position).getTitle());
+              //  postDetailActivity.putExtra("title",mData.get(position).getTitle());
                 postDetailActivity.putExtra("postImage",mData.get(position).getPicture());
                 postDetailActivity.putExtra("description",mData.get(position).getDescription());
                 postDetailActivity.putExtra("postKey",mData.get(position).getPostKey());
                 postDetailActivity.putExtra("userPhoto",mData.get(position).getUserPhoto());
+                postDetailActivity.putExtra("userName",mData.get(position).getUserName());
                 long timestamp  = (long) mData.get(position).getTimeStamp();
                 postDetailActivity.putExtra("postDate",timestamp) ;
                 mContext.startActivity(postDetailActivity);
@@ -100,11 +101,12 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 Intent postDetailActivity = new Intent(mContext,PostDetails.class);
                 int position = getAdapterPosition();
 
-                postDetailActivity.putExtra("title",mData.get(position).getTitle());
+                //  postDetailActivity.putExtra("title",mData.get(position).getTitle());
                 postDetailActivity.putExtra("postImage",mData.get(position).getPicture());
                 postDetailActivity.putExtra("description",mData.get(position).getDescription());
                 postDetailActivity.putExtra("postKey",mData.get(position).getPostKey());
                 postDetailActivity.putExtra("userPhoto",mData.get(position).getUserPhoto());
+                postDetailActivity.putExtra("userName",mData.get(position).getUserName());
                 long timestamp  = (long) mData.get(position).getTimeStamp();
                 postDetailActivity.putExtra("postDate",timestamp) ;
                 mContext.startActivity(postDetailActivity);

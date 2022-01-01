@@ -1,4 +1,4 @@
-<com.google.android.material.card.MaterialCardView xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -24,13 +24,7 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:orientation="vertical">
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:dividerThickness="1dp"
-            app:dividerColor="#B6B4B4"
-            />
+
 
 
         <LinearLayout
@@ -46,7 +40,7 @@
                 android:weightSum="8"
                 android:orientation="horizontal">
                 <com.mikhaellopez.circularimageview.CircularImageView
-                    android:id="@+id/post_owner_pic"
+                    android:id="@+id/comment_owner_pic"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:layout_marginTop="5dp"
@@ -99,7 +93,15 @@
 
                     </LinearLayout>
 
+
+
+
+
                 </LinearLayout>
+
+
+
+
 
             </LinearLayout>
 
@@ -108,6 +110,51 @@
 
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="-30dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/comment_date"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="6 min"
+                android:textAllCaps="false"
+                android:textColor="#605E61"
+                app:rippleColor="#E91E63"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Like"
+                android:textAllCaps="false"
+                android:textColor="#605E61"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:foreground="?android:attr/selectableItemBackground"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Reply"
+                android:textAllCaps="false"
+                android:textColor="#605E61"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:foreground="?android:attr/selectableItemBackground"/>
+        </LinearLayout>
+
+
         <!-- Media
         <ImageView
             android:id="@+id/post_pic"
@@ -137,4 +184,4 @@
 
     </LinearLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
