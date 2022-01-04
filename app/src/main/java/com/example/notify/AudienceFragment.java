@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 
 import org.jetbrains.annotations.NotNull;
@@ -29,6 +30,15 @@ public class AudienceFragment extends Fragment {
 
         FragmentManager fragmentManager = getParentFragmentManager();
         AudienceSelectionFragment audienceSelectionFragment = new AudienceSelectionFragment();
+
+        MaterialToolbar toolbar_post = (MaterialToolbar)view.findViewById(R.id.topAppBar);
+
+        toolbar_post.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentManager.popBackStack();
+            }
+        });
 
 
         add_btn.setOnClickListener(new View.OnClickListener() {

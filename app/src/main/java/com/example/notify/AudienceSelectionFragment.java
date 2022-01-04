@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -33,6 +34,15 @@ public class AudienceSelectionFragment extends Fragment {
 
 
         FragmentManager fragmentManager = getParentFragmentManager();
+
+        MaterialToolbar toolbar_post = (MaterialToolbar)view.findViewById(R.id.topAppBar);
+
+        toolbar_post.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentManager.popBackStack();
+            }
+        });
 
 
         add_btn.setOnClickListener(new View.OnClickListener() {

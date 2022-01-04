@@ -18,11 +18,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -46,6 +50,8 @@ public class HomeFragment extends Fragment {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference ;
     List<PostData> postList;
+    FirebaseAuth mAuth;
+    FirebaseUser currentUser ;
 
 
 
@@ -80,6 +86,14 @@ public class HomeFragment extends Fragment {
         postRecyclerView.setHasFixedSize(true);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Posts");
+        CircularImageView profile_pic =(CircularImageView) view.findViewById(R.id.user_profile_pic);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
+        Glide.with(this).load(currentUser.getPhotoUrl()).into(profile_pic);
+
 
 
         Button editText = view.findViewById(R.id.create_post);

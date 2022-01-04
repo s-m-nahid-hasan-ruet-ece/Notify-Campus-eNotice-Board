@@ -16,11 +16,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <activity
+            android:name=".testKotlineActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".PostDetails"
             android:exported="true" />
         <activity
             android:name=".Test"
-            android:exported="true"></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SignupActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -37,7 +48,7 @@
             android:name=".post"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".MainActivity2"></activity>
+        <activity android:name=".MainActivity2" />
         <activity android:name=".MainActivity" />
     </application>
 

@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.jetbrains.annotations.NotNull;
@@ -54,6 +55,15 @@ public class DeadlineFragment extends Fragment {
 
 
         Button done_btn = (Button) view.findViewById(R.id.done_btn);
+
+        MaterialToolbar toolbar_post = (MaterialToolbar)view.findViewById(R.id.topAppBar);
+
+        toolbar_post.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentManager.popBackStack();
+            }
+        });
 
         done_btn.setOnClickListener(new View.OnClickListener() {
             @Override

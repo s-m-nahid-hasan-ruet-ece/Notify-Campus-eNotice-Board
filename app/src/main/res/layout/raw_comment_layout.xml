@@ -5,18 +5,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:focusable="true">
-    <!--
-      android:layout_margin="7dp"
-      app:cardElevation="1dp"
-      android:translationZ="1dp"
-      app:strokeWidth="0.2dp"
-      app:strokeColor="@color/back_button"
-      app:cardCornerRadius="5dp"
-      -->
-    <!--
-        android:elevation="1dp"
-        android:translationZ="3dp"
-     -->
 
 
     <LinearLayout
@@ -129,6 +117,8 @@
                 android:layout_height="wrap_content"
                 android:text="6 min"
                 android:textAllCaps="false"
+                android:clickable="true"
+                android:focusable="true"
                 android:textColor="#605E61"
                 app:rippleColor="#E91E63"/>
 
@@ -140,7 +130,8 @@
                 android:textAllCaps="false"
                 android:textColor="#605E61"
                 android:clickable="true"
-                android:focusable="true" />
+                android:focusable="true"
+                />
 
             <TextView
                 style="?attr/borderlessButtonStyle"
@@ -153,37 +144,6 @@
                 android:focusable="true"
                />
         </LinearLayout>
-
-
-        <!-- Media
-
-         android:background="?android:attr/selectableItemBackground"
-         android:foreground="?android:attr/selectableItemBackground"
-
-        <ImageView
-            android:id="@+id/post_pic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/media"
-            android:scaleType="fitXY"
-            android:clickable="true"
-            android:adjustViewBounds="true"
-            android:layout_marginBottom="5dp"
-            android:contentDescription="@string/content_description_media"
-            />
-        -->
-
-
-
-        <!-- Buttons -->
-
-
-
-
-
-
-
-
 
 
     </LinearLayout>
