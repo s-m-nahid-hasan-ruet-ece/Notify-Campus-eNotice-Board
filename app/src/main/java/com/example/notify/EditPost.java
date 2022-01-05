@@ -65,8 +65,11 @@ public class EditPost extends Fragment{
         void onBottomButtionClick(String sub);
         boolean checkChip();
         boolean checkDeadlineChipData();
+        boolean checkAudienceChipData();
         String getSubjectText();
         String[] getDeadlineData();
+        String[] getAudienceData();
+
     }
 
     @Override
@@ -97,6 +100,7 @@ public class EditPost extends Fragment{
     FirebaseUser currentUser ;
     Uri pickedImgUri=null ;
     AppCompatEditText post_text;
+    private String day,month,year,hour,minute,faculty,department,batch,section,subject;
 
 
 
@@ -157,6 +161,17 @@ public class EditPost extends Fragment{
 
 
         toolbar_post.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+
+
+            final String[] dataDeadline= ncallback.getDeadlineData();
+            final String[] dataAudience = ncallback.getAudienceData();
+            final String subject = ncallback.getSubjectText();
+
+
+
+
+
+
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
@@ -164,7 +179,7 @@ public class EditPost extends Fragment{
 
 
                         if (!editText.getText().toString().isEmpty()
-                                && pickedImgUri != null ) {
+                                && pickedImgUri != null && dataDeadline!=null && dataAudience!=null && subject!=null) {
 
 
                             StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("post_images");
@@ -173,24 +188,29 @@ public class EditPost extends Fragment{
                                 @Override
                                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                                    imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                         @Override
                                         public void onSuccess(Uri uri) {
                                             String imageDownlaodLink = uri.toString();
                                             PostData post = new PostData(editText.getText().toString(),
                                                     imageDownlaodLink,
                                                     user_name.getText().toString(),
-                                                    currentUser.getPhotoUrl().toString());
-
+                                                    currentUser.getPhotoUrl().toString(),
+                                                    subject,
+                                                    dataDeadline[0],
+                                                    dataDeadline[1],
+                                                    dataDeadline[2],
+                                                    dataDeadline[3],
+                                                    dataDeadline[4],
+                                                    dataAudience[0],
+                                                    dataAudience[1],
+                                                    dataAudience[2],
+                                                    dataAudience[3]);
                                             addPost(post);
-
-
-
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-
                                             showMessage(e.getMessage());
                                         }
                                     });
@@ -202,7 +222,16 @@ public class EditPost extends Fragment{
 
                         }
                         else {
-                            showMessage("Please verify all input fields and choose Post Image") ;
+                            if(editText.getText().toString().isEmpty())
+                                showMessage("Please write something to post notice") ;
+                            else if(pickedImgUri == null)
+                                showMessage("Please select an image to post") ;
+                            else if(dataDeadline==null)
+                                showMessage("Select a deadline");
+                            else if(dataAudience==null)
+                                showMessage("Select audience");
+                            else
+                                showMessage("Enter the subject");
 
                         }
 
@@ -244,8 +273,17 @@ public class EditPost extends Fragment{
         chip_audience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AudienceFragment audienceFragment = new AudienceFragment();
-                fragmentManager.beginTransaction().replace(R.id.fragment_container,audienceFragment).addToBackStack(null).commit();
+                if(!ncallback.checkAudienceChipData())
+                {
+                    AudienceSelectionFragment audienceSelectionFragment = new AudienceSelectionFragment();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container,audienceSelectionFragment).addToBackStack(null).commit();
+
+                }
+                else
+                {
+                    DialogShowAudience();
+                    Toast.makeText(getActivity(),"Audience",Toast.LENGTH_SHORT).show();
+                }
             }
         });
         chip_deadline.setOnClickListener(new View.OnClickListener() {
@@ -259,7 +297,7 @@ public class EditPost extends Fragment{
                 else
                 {
                     DialogShowDeadline();
-                    Toast.makeText(getActivity(),"Subject Already Added!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Deadline",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -453,11 +491,12 @@ public class EditPost extends Fragment{
     {
         String[] data = ncallback.getDeadlineData();
 
+
         MaterialAlertDialogBuilder materialAlertDialogBuilder;
         materialAlertDialogBuilder = new MaterialAlertDialogBuilder(getContext(),R.style.ThemeOverlay_App_MaterialAlertDialog);
 
-        materialAlertDialogBuilder.setTitle("Subject")
-                .setMessage(data[0]+" at "+data[1])
+        materialAlertDialogBuilder.setTitle("Deadline")
+                .setMessage(data[0]+" "+data[1]+" at "+data[3]+" : "+data[4])
                 .setNeutralButton("Close", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -474,6 +513,37 @@ public class EditPost extends Fragment{
                 })
                 .show();
     }
+
+    public void DialogShowAudience()
+    {
+        String[] data = ncallback.getAudienceData();
+
+
+        MaterialAlertDialogBuilder materialAlertDialogBuilder;
+        materialAlertDialogBuilder = new MaterialAlertDialogBuilder(getContext(),R.style.ThemeOverlay_App_MaterialAlertDialog);
+
+        materialAlertDialogBuilder.setTitle("Audience")
+                .setMessage("Faculty: "+data[0]+" \nDepartment: "+data[1]+" \nBatch: "+data[2]+" \nSection: "+data[3])
+                .setNeutralButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .setPositiveButton("Edit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DeadlineFragment deadlineFragment = new DeadlineFragment();
+                        FragmentManager fragmentManager = getParentFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.fragment_container,deadlineFragment).addToBackStack(null).commit();
+                    }
+                })
+                .show();
+    }
+
+
+
+
 
     private void showMessage(String message) {
 

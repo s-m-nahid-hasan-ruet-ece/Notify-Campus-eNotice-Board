@@ -16,9 +16,12 @@
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/activity_post_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/activity_test.xml" value="0.25" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/activity_test_kotline.xml" value="0.21" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/audience_select_layout.xml" value="0.25" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/bottom_navigation_bar.xml" value="0.14175724637681159" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/content_home.xml" value="0.1361111111111111" />
-        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/dropdown_item.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/dropdown_item.xml" value="0.21" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_audience_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_audience_selection_dialog.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_container_layout.xml" value="0.1" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_deadline_layout.xml" value="0.33" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_details_layout.xml" value="0.19597457627118645" />

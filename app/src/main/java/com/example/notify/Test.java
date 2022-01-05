@@ -30,23 +30,22 @@ public class Test extends AppCompatActivity {
 
         Button button = findViewById(R.id.done_btn);
 
-        String[] languages = getResources().getStringArray(R.array.programming_languages);
+        String[] languages = getResources().getStringArray(R.array.day);
         String[] months = getResources().getStringArray(R.array.month);
         String[] years = getResources().getStringArray(R.array.year);
         String[] hours = getResources().getStringArray(R.array.hour);
         String[] mins = getResources().getStringArray(R.array.minute);
 
 
-        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextViewDay);
         AutoCompleteTextView autoCompleteTextViewMonth = findViewById(R.id.autoCompleteTextViewMonth);
         AutoCompleteTextView autoCompleteTextViewYear = findViewById(R.id.autoCompleteTextViewYear);
         AutoCompleteTextView autoCompleteTextViewHour = findViewById(R.id.autoCompleteTextViewHour);
         AutoCompleteTextView autoCompleteTextViewMins = findViewById(R.id.autoCompleteTextViewMinute);
 
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> arrayAdapterDay = new ArrayAdapter<String>(this,
                 R.layout.dropdown_item, languages);
-
         ArrayAdapter<String> arrayAdapterMonth = new ArrayAdapter<String>(this,
                 R.layout.dropdown_item, months);
         ArrayAdapter<String> arrayAdapterYear = new ArrayAdapter<String>(this,
@@ -56,21 +55,21 @@ public class Test extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapterMins = new ArrayAdapter<String>(this,
                 R.layout.dropdown_item, mins);
 
-        autoCompleteTextView.setAdapter(arrayAdapter);
+        autoCompleteTextView.setAdapter(arrayAdapterDay);
         autoCompleteTextViewMonth.setAdapter(arrayAdapterMonth);
         autoCompleteTextViewYear.setAdapter(arrayAdapterYear);
         autoCompleteTextViewHour.setAdapter(arrayAdapterHour);
         autoCompleteTextViewMins.setAdapter(arrayAdapterMins);
 
 
-        TextInputLayout textInputLayout = findViewById(R.id.textInputLayout3);
+        TextInputLayout textInputLayout = findViewById(R.id.textInputLayoutDay);
 
 
 
         ((AutoCompleteTextView)textInputLayout.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                 s = arrayAdapter.getItem(position);
+                 s = arrayAdapterDay.getItem(position);
             }
         });
 

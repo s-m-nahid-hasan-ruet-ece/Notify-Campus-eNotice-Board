@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.chip.Chip;
 
 import java.util.List;
 
@@ -48,6 +49,10 @@ public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
     }
     else
         holder.tvTitle.setText(mData.get(position).getDescription());
+        holder.subject.setText(mData.get(position).getSubject());
+        String deadlineDate = mData.get(position).getDeadlineDay()+" "+ mData.get(position).getDeadlineMonth();
+        holder.deadlineChip.setText(deadlineDate);
+        //holder.postTime.setText(mData.get(position).getTimeStamp());
 
 
         holder.userName.setText(mData.get(position).getUserName());
@@ -65,8 +70,13 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
     TextView tvTitle;
     TextView userName;
+    TextView subject;
+    TextView postTime;
     ImageView imgPost;
     ImageView imgPostProfile;
+    Chip deadlineChip;
+
+
 
     public MyViewHolder(View itemView) {
         super(itemView);
@@ -75,6 +85,10 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         imgPost = itemView.findViewById(R.id.post_pic);
         imgPostProfile = itemView.findViewById(R.id.post_owner_pic);
         userName = itemView.findViewById(R.id.user_name);
+        subject = itemView.findViewById(R.id.subject);
+        postTime = itemView.findViewById(R.id.post_time);
+        deadlineChip = itemView.findViewById(R.id.chip_deadline);
+
 
 
         imgPost.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +103,11 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 postDetailActivity.putExtra("postKey",mData.get(position).getPostKey());
                 postDetailActivity.putExtra("userPhoto",mData.get(position).getUserPhoto());
                 postDetailActivity.putExtra("userName",mData.get(position).getUserName());
+                postDetailActivity.putExtra("subject",mData.get(position).getSubject());
+                postDetailActivity.putExtra("day",mData.get(position).getDeadlineDay());
+                postDetailActivity.putExtra("month",mData.get(position).getDeadlineMonth());
+
+
                 long timestamp  = (long) mData.get(position).getTimeStamp();
                 postDetailActivity.putExtra("postDate",timestamp) ;
                 mContext.startActivity(postDetailActivity);
@@ -107,6 +126,10 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 postDetailActivity.putExtra("postKey",mData.get(position).getPostKey());
                 postDetailActivity.putExtra("userPhoto",mData.get(position).getUserPhoto());
                 postDetailActivity.putExtra("userName",mData.get(position).getUserName());
+                postDetailActivity.putExtra("subject",mData.get(position).getSubject());
+                postDetailActivity.putExtra("day",mData.get(position).getDeadlineDay());
+                postDetailActivity.putExtra("month",mData.get(position).getDeadlineMonth());
+
                 long timestamp  = (long) mData.get(position).getTimeStamp();
                 postDetailActivity.putExtra("postDate",timestamp) ;
                 mContext.startActivity(postDetailActivity);

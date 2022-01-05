@@ -26,11 +26,16 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-public class post extends AppCompatActivity implements EditPost.OnClickOptionListener,SubjectFragment.onSubjectChipClickListener,DeadlineFragment.onDeadlineChipListener  {
+public class post extends AppCompatActivity implements EditPost.OnClickOptionListener,
+                                                       SubjectFragment.onSubjectChipClickListener,
+                                                       DeadlineFragment.onDeadlineChipListener,
+                                                       AudienceSelectionFragment.onAudienceSelectionFragmentChipListener{
 
     ///  Input Data from fragments
     public  String subject_text;
-    public  String time_text,date_text;
+    public  String day,month,year,hour,minute;
+    public  String faculty,department,batch,section;
+
     ///
     AlertDialog.Builder builder;
 
@@ -195,7 +200,11 @@ public class post extends AppCompatActivity implements EditPost.OnClickOptionLis
     }
     public boolean checkDeadlineChipData()
     {
-        return date_text != null && time_text != null;
+        return day != null && month != null && year != null && hour != null && minute !=null;
+    }
+    public boolean checkAudienceChipData()
+    {
+        return faculty != null && department != null && batch != null && section != null;
     }
     public String getSubjectText()
     {
@@ -203,19 +212,45 @@ public class post extends AppCompatActivity implements EditPost.OnClickOptionLis
     }
     public String[] getDeadlineData()
     {
-        String[]  data = new String[3];
+        String[]  data = new String[5];
 
-        data[0]= date_text;
-        data[1]= time_text;
+        data[0]= day;
+        data[1]= month;
+        data[2]= year;
+        data[3]= hour;
+        data[4]= minute;
+
+        return data;
+    }
+    public String[] getAudienceData()
+    {
+        String[]  data = new String[4];
+
+        data[0]= faculty;
+        data[1]= department;
+        data[2]= batch;
+        data[3]= section;
 
         return data;
     }
 
-    public void deadlineChipListener(String date_txt, String time_txt)
+    public void deadlineChipListener(String mDay, String mMonth, String mYear, String mHour, String mMinute)
     {
-        date_text = date_txt;
-        time_text = time_txt;
+        day = mDay;
+        month = mMonth;
+        year = mYear;
+        hour = mHour;
+        minute = mMinute;
     }
+
+    public void AudienceChipListener(String mFaculty, String mDepartemnt, String mBatch, String mSection)
+    {
+        faculty = mFaculty;
+        department = mDepartemnt;
+        batch = mBatch;
+        section = mSection;
+    }
+
 
 
 }
