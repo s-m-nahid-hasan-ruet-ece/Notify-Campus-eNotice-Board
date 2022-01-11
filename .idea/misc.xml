@@ -10,6 +10,7 @@
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/drawable/comment_background.xml" value="0.146875" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/drawable/edittext_button_style_rounded.xml" value="0.2203125" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/drawable/material_button_click_effect.xml" value="0.2203125" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/drawable/search_background.xml" value="0.146875" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/drawable/time_icon.xml" value="0.146875" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/activity_post.xml" value="0.18" />
@@ -25,12 +26,14 @@
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_container_layout.xml" value="0.1" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_deadline_layout.xml" value="0.33" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_details_layout.xml" value="0.19597457627118645" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_subject_layout.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/raw_comment_layout.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/raw_edit_comment_layout.xml" value="0.25" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/raw_edit_post_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/raw_post_just_text.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/raw_post_with_audio.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/raw_post_with_image.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/search_fragment.xml" value="0.2" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/menu/audience_dept_selection_menu.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/menu/bottom_app_bar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/menu/top_app_bar_post.xml" value="0.20416666666666666" />

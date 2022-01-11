@@ -110,6 +110,10 @@
     <string name="write_a_comment">Write a comment...</string>
     <string name="Date">Date</string>
     <string name="Time">Time</string>
+    <string name="Search">Search</string>
+    <string name="trySearch">Try searching for</string>
+    <string name="subject">- Subject</string>
+    <string name="noticeText">- Notice text</string>
 
     <string-array name="day">
         <item>1</item>
