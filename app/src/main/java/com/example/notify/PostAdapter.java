@@ -149,5 +149,15 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     }
 
 
+  }
+
+public boolean checkEligible(String data, String key)
+{
+    if("All Faculty".equals(key) || "All Department".equals(key) || "All Batch".equals(key) || "All Section".equals(key) )
+        return true;
+
+    // check substring
+        return  true;
 }
+
 }

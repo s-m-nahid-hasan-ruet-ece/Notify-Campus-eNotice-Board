@@ -155,7 +155,8 @@ public class EditPost extends Fragment{
         toolbar_post.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragmentManager.popBackStack();
+               // fragmentManager.popBackStack();
+                requireActivity().onBackPressed();
             }
         });
 

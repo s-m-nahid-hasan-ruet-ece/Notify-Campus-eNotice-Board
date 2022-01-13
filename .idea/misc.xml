@@ -21,6 +21,9 @@
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/bottom_navigation_bar.xml" value="0.14175724637681159" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/content_home.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/dropdown_item.xml" value="0.21" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/fragment_user_profile_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/login_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/login_teacher_student_fragment.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_audience_layout.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_audience_selection_dialog.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/post_container_layout.xml" value="0.1" />
@@ -34,8 +37,17 @@
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/raw_post_with_audio.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/raw_post_with_image.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/search_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/sign_up_teacher_id.xml" value="0.25" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/signup_fragment_common.xml" value="0.25" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/signup_fragment_pro_pic.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/signup_fragment_student.xml" value="0.17" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/signup_fragment_teacher.xml" value="0.33" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/signup_studentid.xml" value="0.25" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/signup_teacher_student_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/layout/signup_verify.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/menu/audience_dept_selection_menu.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/menu/bottom_app_bar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/menu/top_app_bar.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify/app/src/main/res/menu/top_app_bar_post.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify2/app/src/main/res/drawable/bottom_border.xml" value="0.2203125" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify2/app/src/main/res/drawable/button_bg.xml" value="0.13914473684210527" />

@@ -114,6 +114,7 @@
     <string name="trySearch">Try searching for</string>
     <string name="subject">- Subject</string>
     <string name="noticeText">- Notice text</string>
+    <string name="sign_up_as_student">Sign Up as Student</string>
 
     <string-array name="day">
         <item>1</item>
@@ -342,6 +343,13 @@
         <item>197</item>
         <item>198</item>
         <item>199</item>
+    </string-array>
+
+    <string-array name="designation">
+        <item>Professor</item>
+        <item>Associate Professor</item>
+        <item>Assistant Professor</item>
+        <item>Lecturer</item>
     </string-array>
 
 

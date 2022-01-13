@@ -29,6 +29,9 @@
     <color name="back_button">#979797</color>
 
 
+    <color name="toAppBarColor">#58A4E6</color>
+
+
 
     <color name="primary">#0094E4</color>
     <color name="secondary">#00BCD5</color>

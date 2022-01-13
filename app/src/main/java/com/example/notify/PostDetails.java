@@ -74,7 +74,7 @@ public class PostDetails extends AppCompatActivity {
         toolbar_back.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateUI();
+              PostDetails.super.onBackPressed();
             }
         });
 

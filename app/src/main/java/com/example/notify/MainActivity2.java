@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
+import android.os.Build;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -23,13 +24,16 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity2 extends AppCompatActivity {
+import java.util.Objects;
+
+public class MainActivity2 extends AppCompatActivity implements Search.onSearchFragmentListener{
 
 
     //private ActionBar toolbar;
     MaterialToolbar toolbar_home;
     View item_filter_btn;
     View item_search_btn;
+    String searchText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,6 @@ public class MainActivity2 extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
 
-
         toolbar_home = (MaterialToolbar)findViewById(R.id.topAppBar);
         setSupportActionBar(toolbar_home);
 
@@ -52,6 +55,18 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Search Bar! ",Toast.LENGTH_SHORT).show();
+                Objects.requireNonNull(getSupportActionBar()).hide();
+                Search searchFragment = new Search();
+                if (Build.VERSION.SDK_INT >= 21) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.white));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                    }
+
+                }
+                fragmentManager.beginTransaction().replace(R.id.search_fragment_container,searchFragment).addToBackStack(null).commit();
+
             }
         });
 
@@ -71,7 +86,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         Configuration config = getResources().getConfiguration();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,new home_fragment()).commit();
+       // getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -121,12 +136,37 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = new Intent(this,post.class);
         startActivity(intent);
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.top_app_bar,menu);
         return true;
+    }
+*/
+    public void getSearchText(String searchTextFragment){
+        searchText = searchTextFragment;
+
+        Toast.makeText(this,searchText,Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.filter_btn) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

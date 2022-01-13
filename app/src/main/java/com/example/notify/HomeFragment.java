@@ -89,6 +89,7 @@ public class HomeFragment extends Fragment {
         CircularImageView profile_pic =(CircularImageView) view.findViewById(R.id.user_profile_pic);
 
 
+
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 

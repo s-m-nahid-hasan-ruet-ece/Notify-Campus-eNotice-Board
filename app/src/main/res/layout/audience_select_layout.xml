@@ -90,8 +90,6 @@
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxStrokeColor="@color/purple_500"
                 app:boxStrokeErrorColor="#E82F2F"
-
-
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

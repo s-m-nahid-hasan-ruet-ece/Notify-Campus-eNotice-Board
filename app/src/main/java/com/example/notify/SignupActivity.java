@@ -31,7 +31,7 @@ public class SignupActivity extends AppCompatActivity implements SignupTeacherSt
                                                                  SignUpProfilePic.SignUpProfilePicResponse {
 
     boolean isTeacher = false;
-     String name,id,designation,department,email,password,verification_code;
+    String name,id,designation,faculty,department,batch,section,email,password,verification_code;
     Uri pickedImgUri=null ;
 
     private FirebaseAuth MAuth;
@@ -80,12 +80,13 @@ public class SignupActivity extends AppCompatActivity implements SignupTeacherSt
         department = user_dept;
     }
 
-    public void getStudentId(String userid)
+    public void getStudentId(String userid, String userFaculty, String userDeptartment, String userBatch, String userSection)
     {
         id = userid;
-        /*
-        Department should be determine from student id
-         */
+        faculty = userFaculty;
+        department = userDeptartment;
+        batch = userBatch;
+        section = userSection;
     }
     public void getVerificationCode(String code)
     {
