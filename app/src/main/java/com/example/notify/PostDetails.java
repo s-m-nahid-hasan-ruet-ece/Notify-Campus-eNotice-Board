@@ -23,6 +23,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -42,9 +43,11 @@ public class PostDetails extends AppCompatActivity {
 
     ImageView imgPost,imgUserPost,imgCurrentUser;
     TextView txtPostDesc,txtPostDateName,txtPostTitle,postOwnerUsername;
+    TextView subject;
     EditText editTextComment;
     MaterialButton btnAddComment;
     String PostKey;
+    Chip deadlineChip;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
@@ -89,6 +92,9 @@ public class PostDetails extends AppCompatActivity {
         rvComment = findViewById(R.id.rv_comment);
         imgPost =findViewById(R.id.post_pic);
         imgUserPost = findViewById(R.id.post_owner_pic);
+        subject = findViewById(R.id.post_subject);
+        deadlineChip = findViewById(R.id.chip_deadline);
+
         //imgCurrentUser = findViewById(R.id.post_detail_currentuser_img);
 
        // txtPostTitle = findViewById(R.id.post_detail_title);
@@ -166,8 +172,16 @@ public class PostDetails extends AppCompatActivity {
         txtPostDateName.setText(date);
 
 
+        String deadlineDate = getIntent().getExtras().getString("day")+" "+ getIntent().getExtras().getString("month");
+        deadlineChip.setText(deadlineDate);
 
-       inirvComment();
+        String postSubject = getIntent().getExtras().getString("subject");
+        subject.setText(postSubject);
+
+
+
+
+        inirvComment();
 
 
     }

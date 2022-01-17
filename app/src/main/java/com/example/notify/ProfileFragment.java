@@ -49,7 +49,7 @@ public class ProfileFragment extends Fragment {
         user_email.setText(currentUser.getEmail());
         Glide.with(this).load(currentUser.getPhotoUrl()).into(profile_pic);
 
-
+ 
 
 
         logout_btn.setOnClickListener(new View.OnClickListener() {

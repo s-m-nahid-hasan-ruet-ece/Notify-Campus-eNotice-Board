@@ -21,80 +21,104 @@ import java.util.Objects;
 
 public class Test extends AppCompatActivity {
 
-    String s;
+    private final String[] strings = {"like", "love", "laugh", "wow", "sad", "angry"};
+  //  private ReactionView reactionView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_kotline);
 
-        Button button = findViewById(R.id.done_btn);
-
-        String[] languages = getResources().getStringArray(R.array.day);
-        String[] months = getResources().getStringArray(R.array.month);
-        String[] years = getResources().getStringArray(R.array.year);
-        String[] hours = getResources().getStringArray(R.array.hour);
-        String[] mins = getResources().getStringArray(R.array.minute);
-
-
-        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextViewDay);
-        AutoCompleteTextView autoCompleteTextViewMonth = findViewById(R.id.autoCompleteTextViewMonth);
-        AutoCompleteTextView autoCompleteTextViewYear = findViewById(R.id.autoCompleteTextViewYear);
-        AutoCompleteTextView autoCompleteTextViewHour = findViewById(R.id.autoCompleteTextViewHour);
-        AutoCompleteTextView autoCompleteTextViewMins = findViewById(R.id.autoCompleteTextViewMinute);
-
-
-        ArrayAdapter<String> arrayAdapterDay = new ArrayAdapter<String>(this,
-                R.layout.dropdown_item, languages);
-        ArrayAdapter<String> arrayAdapterMonth = new ArrayAdapter<String>(this,
-                R.layout.dropdown_item, months);
-        ArrayAdapter<String> arrayAdapterYear = new ArrayAdapter<String>(this,
-                R.layout.dropdown_item, years);
-        ArrayAdapter<String> arrayAdapterHour = new ArrayAdapter<String>(this,
-                R.layout.dropdown_item, hours);
-        ArrayAdapter<String> arrayAdapterMins = new ArrayAdapter<String>(this,
-                R.layout.dropdown_item, mins);
-
-        autoCompleteTextView.setAdapter(arrayAdapterDay);
-        autoCompleteTextViewMonth.setAdapter(arrayAdapterMonth);
-        autoCompleteTextViewYear.setAdapter(arrayAdapterYear);
-        autoCompleteTextViewHour.setAdapter(arrayAdapterHour);
-        autoCompleteTextViewMins.setAdapter(arrayAdapterMins);
-
-
-        TextInputLayout textInputLayout = findViewById(R.id.textInputLayoutDay);
-
-
-
-        ((AutoCompleteTextView)textInputLayout.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                 s = arrayAdapterDay.getItem(position);
-            }
-        });
-
-
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showMessage();
-            }
-        });
-
-
-
-
+        //sampleCenterLeft();
+        //sampleTopLeft();
+        //sampleBottomLeft();
+        //KotlinSamplesKt.setupTopRight(this);
+        //KotlinSamplesKt.setupRight(this);
 
 
 
     }
+/*
+    private void sampleCenterLeft() {
 
+        ReactionPopup popup = new ReactionPopup(
+                this,
+                new ReactionsConfigBuilder(this)
+                        .withReactions(new int[]{
+                                R.drawable.ic_fb_like,
+                                R.drawable.ic_fb_love,
+                                R.drawable.ic_fb_laugh,
+                                R.drawable.ic_fb_wow,
+                                R.drawable.ic_fb_sad,
+                                R.drawable.ic_fb_angry,
+                        })
+                        .withReactionTexts(position -> strings[position])
+                        .build());
 
-    void showMessage()
-    {
-        Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
+        findViewById(R.id.facebook_btn).setOnTouchListener(popup);
     }
+
+    */
+/*
+    private void sampleTopLeft() {
+        ReactionPopup popup = new ReactionPopup(
+                this,
+                new ReactionsConfigBuilder(this)
+                        .withReactions(new int[]{
+                                R.drawable.ic_fb_like,
+                                R.drawable.ic_fb_love,
+                                R.drawable.ic_fb_laugh,
+                        })
+                        .withPopupAlpha(20)
+                        .withReactionTexts(position -> strings[position])
+                        .withTextBackground(new ColorDrawable(Color.TRANSPARENT))
+                        .withTextColor(Color.BLACK)
+                        .withTextHorizontalPadding(0)
+                        .withTextVerticalPadding(0)
+                        .withTextSize(getResources().getDimension(R.dimen.reactions_text_size))
+                        .build(),
+                position -> true);
+
+        findViewById(R.id.top_btn).setOnTouchListener(popup);
+    }
+
+    private void sampleBottomLeft() {
+        int margin = getResources().getDimensionPixelSize(R.dimen.crypto_item_margin);
+
+        ReactionPopup popup = new ReactionPopup(this, new ReactionsConfigBuilder(this)
+                .withReactions(new int[]{
+                        R.drawable.ic_crypto_btc,
+                        R.drawable.ic_crypto_eth,
+                        R.drawable.ic_crypto_ltc,
+                        R.drawable.ic_crypto_dash,
+                        R.drawable.ic_crypto_xrp,
+                        R.drawable.ic_crypto_xmr,
+                        R.drawable.ic_crypto_doge,
+                        R.drawable.ic_crypto_steem,
+                        R.drawable.ic_crypto_kmd,
+                        R.drawable.ic_crypto_zec
+                })
+                .withReactionTexts(R.array.crypto_symbols)
+                .withPopupColor(Color.LTGRAY)
+                .withReactionSize(getResources().getDimensionPixelSize(R.dimen.crypto_item_size))
+                .withHorizontalMargin(margin)
+                .withVerticalMargin(margin / 2)
+                .withTextBackground(new ColorDrawable(Color.TRANSPARENT))
+                .withTextColor(Color.BLACK)
+                .withTextSize(getResources().getDimension(R.dimen.reactions_text_size) * 1.5f)
+                .build());
+
+        popup.setReactionSelectedListener((position) -> {
+            Log.i("Reactions", "Selection position=" + position);
+            // Close selector if not invalid item (testing purpose)
+            return position != 3;
+        });
+
+        findViewById(R.id.crypto_bottom_left).setOnTouchListener(popup);
+    }
+*/
+
 
 
 }

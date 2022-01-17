@@ -19,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -31,8 +33,9 @@ public class SignupActivity extends AppCompatActivity implements SignupTeacherSt
                                                                  SignUpProfilePic.SignUpProfilePicResponse {
 
     boolean isTeacher = false;
-    String name,id,designation,faculty,department,batch,section,email,password,verification_code;
+    String name,id,designation,faculty,department,batch,section,email,password,verification_code,userPhotoUri;
     Uri pickedImgUri=null ;
+
 
     private FirebaseAuth MAuth;
 
@@ -105,10 +108,12 @@ public class SignupActivity extends AppCompatActivity implements SignupTeacherSt
     public void createProfile(){
 
         CreateUserAccount(email,name,password);
+
+        UserData user = new UserData(email,name,isTeacher,designation,faculty,department,batch,section);
+        CreateUser(user);
     }
 
     private void CreateUserAccount(String email, final String name, String password) {
-
 
 
         MAuth.createUserWithEmailAndPassword(email,password)
@@ -151,7 +156,7 @@ public class SignupActivity extends AppCompatActivity implements SignupTeacherSt
                     @Override
                     public void onSuccess(Uri uri) {
 
-
+                        userPhotoUri = uri.toString();
 
                         UserProfileChangeRequest profleUpdate = new UserProfileChangeRequest.Builder()
                                 .setDisplayName(name)
@@ -165,14 +170,32 @@ public class SignupActivity extends AppCompatActivity implements SignupTeacherSt
 
                                         if (task.isSuccessful()) {
                                             showMessage("Register Complete");
+
                                             updateUI();
                                         }
-
                                     }
                                 });
                     }
                 });
 
+            }
+        });
+
+    }
+
+    private void CreateUser(UserData user) {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Users").push();
+
+        String key = myRef.getKey();
+        user.setUserKey(key);
+
+        myRef.setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                showMessage("User Updated in DB!");
+               // updateUI();
             }
         });
 

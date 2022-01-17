@@ -78,7 +78,7 @@
             android:text="@string/email"
             android:textAllCaps="false"
             app:icon="@drawable/envalop_icon" />
-
+<!--
         <com.google.android.material.button.MaterialButton
             android:id="@+id/textButton"
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
@@ -89,12 +89,12 @@
             android:text="@string/edit"
             android:textAllCaps="false"
             app:icon="@drawable/pen_icon" />
-
+-->
         <Button
             android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_gravity="center"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_weight="1"

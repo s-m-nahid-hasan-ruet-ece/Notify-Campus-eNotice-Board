@@ -115,6 +115,7 @@
     <string name="subject">- Subject</string>
     <string name="noticeText">- Notice text</string>
     <string name="sign_up_as_student">Sign Up as Student</string>
+    <string name="menuTopAppBar">Menu Top App Bar</string>
 
     <string-array name="day">
         <item>1</item>

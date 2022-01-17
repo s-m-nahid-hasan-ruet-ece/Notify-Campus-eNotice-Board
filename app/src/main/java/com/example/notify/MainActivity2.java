@@ -48,7 +48,10 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
         toolbar_home = (MaterialToolbar)findViewById(R.id.topAppBar);
         setSupportActionBar(toolbar_home);
 
-        item_filter_btn = findViewById(R.id.filter_btn);
+        toolbar_home.inflateMenu(R.menu.top_app_bar);
+
+
+        //item_filter_btn = findViewById(R.id.filter);
 
 
         toolbar_home.setNavigationOnClickListener(new View.OnClickListener() {
@@ -75,9 +78,14 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
             public boolean onMenuItemClick(MenuItem item) {
                 int id = item.getItemId();
 
-                if(id==R.id.filter_btn)
+                if(id==R.id.to_post_time)
                 {
-                    Toast.makeText(getApplicationContext(),"Your News feed will be filtered! ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Post Time ",Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                if(id == R.id.to_deadline)
+                {
+                    Toast.makeText(getApplicationContext(),"Deadline",Toast.LENGTH_SHORT).show();
                     return true;
                 }
                 return false;
@@ -106,7 +114,7 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
             switch (item.getItemId()) {
                 case R.id.home:
-                    item_filter_btn.setVisibility(View.VISIBLE);
+                    //item_filter_btn.setVisibility(View.VISIBLE);
                     toolbar_home.setNavigationIcon(R.drawable.search);
                     HomeFragment homeFragment = new HomeFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
@@ -114,7 +122,7 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
                 case R.id.calendar:
                     CalendarFragment calendarFragment = new CalendarFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,calendarFragment).commit();
-                    item_filter_btn.setVisibility(View.GONE);
+                    //item_filter_btn.setVisibility(View.GONE);
                     toolbar_home.setNavigationIcon(null);
 
 
@@ -122,7 +130,6 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
                 case R.id.profile:
                     ProfileFragment profileFragment = new ProfileFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,profileFragment).commit();
-                    item_filter_btn.setVisibility(View.GONE);
                     toolbar_home.setNavigationIcon(null);
                     return true;
             }
@@ -154,7 +161,7 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_app_bar, menu);
-        return true;
+        return  true;
     }
 
     @Override
@@ -162,7 +169,13 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
         int id = item.getItemId();
 
-        if (id == R.id.filter_btn) {
+        if (id == R.id.to_post_time) {
+            Toast.makeText(this,"Post TIme",Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        if(id == R.id.to_deadline)
+        {
+            Toast.makeText(this,"Deadline",Toast.LENGTH_SHORT).show();
             return true;
         }
 
