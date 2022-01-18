@@ -1,9 +1,12 @@
 package com.example.notify;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +14,12 @@ import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +31,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
@@ -33,6 +40,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
@@ -41,17 +49,43 @@ public class HomeFragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
+    public  String userEmail,userFaculty,userDepartment,userBatch,userSection;
 
     private OnFragmentInteractionListener mListener;
+    HomeFragment.onHomeFragmentListener callback;
+
 
 
     RecyclerView postRecyclerView ;
     PostAdapter postAdapter ;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference ;
-    List<PostData> postList;
+    DatabaseReference databaseReferenceUser;
+    TextView endText;
+    public List<PostData> postList;
     FirebaseAuth mAuth;
     FirebaseUser currentUser ;
+    public UserData userData;
+
+
+    public interface onHomeFragmentListener
+    {
+        void  sendPostList(List<PostData> posts);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try{
+            callback =(HomeFragment.onHomeFragmentListener) context;
+        }
+        catch (ClassCastException e){
+            throw new ClassCastException(context.toString()+"Must be implemented onAudienceSelectionFragmentChipListener!");
+        }
+    }
+
+
+
 
 
 
@@ -86,7 +120,10 @@ public class HomeFragment extends Fragment {
         postRecyclerView.setHasFixedSize(true);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Posts");
+        databaseReferenceUser = firebaseDatabase.getReference("Users");
         CircularImageView profile_pic =(CircularImageView) view.findViewById(R.id.user_profile_pic);
+        endText = view.findViewById(R.id.end_text);
+        postList = new ArrayList<>();
 
 
 
@@ -94,6 +131,7 @@ public class HomeFragment extends Fragment {
         currentUser = mAuth.getCurrentUser();
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(profile_pic);
+        getUserData();
 
 
 
@@ -116,21 +154,43 @@ public class HomeFragment extends Fragment {
         super.onStart();
 
 
+
+          changeStatusBar();
+        //Toast.makeText(getActivity(),userData.getFaculty(),Toast.LENGTH_SHORT).show();
+
+       // Query query = databaseReference.orderByChild("faculty").equalTo("CSE");
+
         databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                postList = new ArrayList<>();
+               // getUserData();
                 for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
 
                     PostData post = postsnap.getValue(PostData.class);
-                    postList.add(post) ;
-                }
 
+                    if(isEligibleForPost(post))
+                    {
+                        postList.add(post) ;
+                    }
+                    else
+                    {
+                        //Toast.makeText(getActivity(),"NOPE",Toast.LENGTH_SHORT).show();
+                        Log.e("postList","Post not added!");
+                    }
+                }
                 Collections.reverse(postList);
 
+                callback.sendPostList(postList);
 
 
+                if(postList.size()==0)
+                    endText.setText("No Results Found!");
+                else
+                    endText.setText("End of Results");
+
+                Log.e("postSIZE","post size"+postList.size());
                 postAdapter = new PostAdapter(getActivity(),postList);
                 postRecyclerView.setAdapter(postAdapter);
 
@@ -155,10 +215,6 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
 
     @Override
     public void onDetach() {
@@ -171,5 +227,74 @@ public class HomeFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+    public void getUserData(){
+
+
+        //Toast.makeText(getActivity(),"Entered Func" + currentUser.getEmail(),Toast.LENGTH_SHORT).show();
+        Log.e("userData","User Data Function entered!");
+
+
+
+        Query query = databaseReferenceUser.orderByChild("userEmail").equalTo(currentUser.getEmail());
+
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot usersnap: snapshot.getChildren()) {
+
+                    userData = usersnap.getValue(UserData.class);
+                    userEmail = userData.getUserEmail();
+                    userFaculty = userData.getFaculty();
+                    userBatch = userData.getBatch();
+                    userSection = userData.getSection();
+
+
+                    Log.e("func","current user updated");
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+
+    public boolean isEligibleForPost(PostData post)
+    {
+        //Toast.makeText(getActivity(),post.getFaculty()+ " vs "+ userFaculty,Toast.LENGTH_SHORT).show();
+        Log.e("isEligible",post.getFaculty()+" vs "+userFaculty);
+
+           if(post.getFaculty().equals(userFaculty) || post.getDepartment().equals(userDepartment)|| post.getBatch().equals(userBatch) || post.getSection().equals(userSection))
+               return true;
+           else
+               return false;
+    }
+
+    public List<PostData>  getList() {
+        Log.e("postSize",  "Size-  "+postList.size());
+
+        return postList;
+    }
+
+    void changeStatusBar()
+    {
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            requireActivity().getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
+            requireActivity().getWindow().setStatusBarColor(getResources().getColor(R.color.toAppBarColor));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requireActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+            }
+
+        }
+
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).show();
+    }
 
 }

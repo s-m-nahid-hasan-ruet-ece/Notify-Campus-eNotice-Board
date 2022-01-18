@@ -163,6 +163,8 @@ public class SignupActivity extends AppCompatActivity implements SignupTeacherSt
                                 .setPhotoUri(uri)
                                 .build();
 
+
+
                         currentUser.updateProfile(profleUpdate)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override

@@ -87,16 +87,20 @@
             app:dividerColor="#B6B4B4" />
 
         <TextView
+            android:id="@+id/search_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/trySearch"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="10dp"
+            android:translationZ="10dp"
+            android:elevation="14dp"
             />
         <TextView
+            android:id="@+id/hint_text1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/subject"
@@ -106,6 +110,7 @@
             android:layout_marginTop="15dp"
             />
         <TextView
+            android:id="@+id/hint_text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/noticeText"
@@ -114,6 +119,44 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="8dp"
             />
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <!-- Scrollable content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/postRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"/>
+                <TextView
+                    android:id="@+id/end_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/end_of_results"
+                    android:textColor="@color/back_button"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    />
+
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
     </LinearLayout>
 
 </LinearLayout>

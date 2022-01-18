@@ -24,9 +24,11 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.List;
 import java.util.Objects;
 
-public class MainActivity2 extends AppCompatActivity implements Search.onSearchFragmentListener{
+public class MainActivity2 extends AppCompatActivity implements Search.onSearchFragmentListener,
+                                                                HomeFragment.onHomeFragmentListener{
 
 
     //private ActionBar toolbar;
@@ -34,6 +36,8 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
     View item_filter_btn;
     View item_search_btn;
     String searchText;
+
+    List<PostData> postList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
         HomeFragment homeFragment = new HomeFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
+
 
         toolbar_home = (MaterialToolbar)findViewById(R.id.topAppBar);
         setSupportActionBar(toolbar_home);
@@ -69,7 +74,6 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
                 }
                 fragmentManager.beginTransaction().replace(R.id.search_fragment_container,searchFragment).addToBackStack(null).commit();
-
             }
         });
 
@@ -143,18 +147,9 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
         Intent intent = new Intent(this,post.class);
         startActivity(intent);
     }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.top_app_bar,menu);
-        return true;
-    }
-*/
-    public void getSearchText(String searchTextFragment){
-        searchText = searchTextFragment;
 
-        Toast.makeText(this,searchText,Toast.LENGTH_SHORT).show();
+    public  List<PostData>  getPostList(){
+         return postList;
     }
 
 
@@ -183,6 +178,23 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
     }
 
 
+    @Override
+    public void sendPostList(List<PostData>  posts) {
+        postList = posts;
+    }
 
+    void changeStatusBar()
+    {
 
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.toAppBarColor));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+            }
+
+        }
+
+        Objects.requireNonNull(((AppCompatActivity) this).getSupportActionBar()).show();
+    }
 }
