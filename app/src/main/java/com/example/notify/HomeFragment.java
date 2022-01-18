@@ -1,6 +1,8 @@
 package com.example.notify;
 
 import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -20,6 +22,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -155,7 +160,6 @@ public class HomeFragment extends Fragment {
 
 
 
-          changeStatusBar();
         //Toast.makeText(getActivity(),userData.getFaculty(),Toast.LENGTH_SHORT).show();
 
        // Query query = databaseReference.orderByChild("faculty").equalTo("CSE");
@@ -203,6 +207,34 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+
+        databaseReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Notification();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
     }
@@ -296,5 +328,29 @@ public class HomeFragment extends Fragment {
 
         Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).show();
     }
+
+
+    private void Notification(){
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("n","n", NotificationManager.IMPORTANCE_DEFAULT);
+
+            NotificationManager manager = requireActivity().getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(requireActivity(),"n")
+                .setContentTitle("Code Space")
+                .setSmallIcon(R.drawable.alarm_black)
+                .setAutoCancel(true)
+
+                .setContentText("New Data is added!");
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(requireActivity());
+        managerCompat.notify(999,builder.build());
+
+
+    }
+
 
 }

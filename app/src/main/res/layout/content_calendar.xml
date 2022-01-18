@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_marginTop="90dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Calendar Fragment"
-        android:textColor="@color/purple_700"
-        android:textSize="25sp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:theme="@style/CustomCalendarMonth"
+        android:dateTextAppearance="@style/CustomCalendarDay"
+        android:weekDayTextAppearance="@style/CustomCalendarWeek"
+        android:weekSeparatorLineColor="@color/primary"
         />
 
+
 </LinearLayout>
+
+<!--
+
+        android:dateTextAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:weekDayTextAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:theme="@style/Theme.MaterialComponents.DayNight"
+
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_marginTop="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/CustomCalendarMonth"
+        android:dateTextAppearance="@style/CustomCalendarDay"
+        android:weekDayTextAppearance="@style/CustomCalendarWeek"
+        android:weekSeparatorLineColor="@color/primary"
+        />
+
+
+-->

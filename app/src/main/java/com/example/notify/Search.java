@@ -95,6 +95,7 @@ public class Search extends Fragment{
         searchText.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 hideKeyboard();
+
                 hint1.setVisibility(View.GONE);
                 hint2.setVisibility(View.GONE);
 
@@ -124,7 +125,7 @@ public class Search extends Fragment{
                     Log.e("poslist size", "postlistSize() "+postList.size()+ " postDataSize--  "+postDataEligible.size());
 
 
-                    if(postList.size()==0)
+                    if(postDataEligible.size()==0)
                     {
                         endText.setText("No Results Found!");
                     }
