@@ -98,6 +98,7 @@ public class EditPost extends Fragment{
     private static final int CAMERA_PIC_REQUEST = 1337;
     FirebaseAuth mAuth;
     FirebaseUser currentUser ;
+    ImageView postImage;
     Uri pickedImgUri=null ;
     AppCompatEditText post_text;
     private String day,month,year,hour,minute,faculty,department,batch,section,subject;
@@ -135,6 +136,7 @@ public class EditPost extends Fragment{
 
         CircularImageView profile_pic = (CircularImageView)view.findViewById(R.id.profile_pic);
         TextView user_name = (TextView)view.findViewById(R.id.user_name);
+        postImage = view.findViewById(R.id.post_pic);
 
 
         MaterialToolbar toolbar_post = (MaterialToolbar)view.findViewById(R.id.topAppBar);
@@ -583,7 +585,10 @@ public class EditPost extends Fragment{
 
         if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
             pickedImgUri = data.getData() ;
+            postImage.setImageURI(null);
+            postImage.setImageURI(pickedImgUri);
         }
+
 
 
     }

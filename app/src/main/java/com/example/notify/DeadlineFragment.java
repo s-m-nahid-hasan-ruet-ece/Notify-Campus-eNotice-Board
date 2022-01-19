@@ -60,6 +60,7 @@ public class DeadlineFragment extends Fragment {
         MaterialToolbar toolbar_post = (MaterialToolbar)view.findViewById(R.id.topAppBar);
 
 
+
         String[] days = getResources().getStringArray(R.array.day);
         String[] months = getResources().getStringArray(R.array.month);
         String[] years = getResources().getStringArray(R.array.year);

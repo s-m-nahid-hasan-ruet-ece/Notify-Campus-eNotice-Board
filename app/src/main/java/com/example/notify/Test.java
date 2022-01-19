@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.ShowableListMenu;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.fragment.app.DialogFragment;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -21,16 +22,21 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amrdeveloper.reactbutton.ReactButton;
+import com.amrdeveloper.reactbutton.Reaction;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Objects;
 
-public class Test extends AppCompatActivity {
+public class Test extends AppCompatActivity implements FBReactionsDialog.onReactionListener{
 
     private final String[] strings = {"like", "love", "laugh", "wow", "sad", "angry"};
+    Button btn;
+    ImageView react_iv;
   //  private ReactionView reactionView;
 
 
@@ -40,19 +46,53 @@ public class Test extends AppCompatActivity {
         setContentView(R.layout.activity_test_kotline);
 
 
-        Button button = findViewById(R.id.button);
+         btn = findViewById(R.id.btn);
+         react_iv = findViewById(R.id.react_iv);
 
-        button.setOnClickListener(new View.OnClickListener() {
+
+        btn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View view) {
-                //addNotification();
-                Notification();
-
+            public boolean onLongClick(View view) {
+                getReactionDialog();
+                return false;
             }
         });
 
 
+    }
 
+
+
+    private DialogFragment getReactionDialog(){
+        FBReactionsDialog fbReactionsDialog = new FBReactionsDialog();
+        fbReactionsDialog.show(getSupportFragmentManager(),fbReactionsDialog.getClass().getSimpleName());
+        return fbReactionsDialog;
+    }
+
+
+    public void onReactionSelected(int reactiontype){
+        switch (reactiontype){
+            case 0:
+                btn.setText("Like");
+                react_iv.setImageResource(R.drawable.ic_like);
+                break;
+            case 1:
+                btn.setText("Love");
+                react_iv.setImageResource(R.drawable.ic_heart);
+                break;
+            case 2:
+                btn.setText("Haha");
+                react_iv.setImageResource(R.drawable.ic_happy);
+                break;
+            case 3:
+                btn.setText("Angry");
+                react_iv.setImageResource(R.drawable.ic_angry);
+                break;
+            case 4:
+                btn.setText("Sad");
+                react_iv.setImageResource(R.drawable.ic_sad);
+                break;
+        }
     }
 
 

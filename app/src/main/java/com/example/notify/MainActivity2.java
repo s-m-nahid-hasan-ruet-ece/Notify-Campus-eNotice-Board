@@ -36,6 +36,8 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
     View item_filter_btn;
     View item_search_btn;
     String searchText;
+    View itemFilterButton;
+
 
     List<PostData> postList;
 
@@ -54,6 +56,7 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
         setSupportActionBar(toolbar_home);
 
         toolbar_home.inflateMenu(R.menu.top_app_bar);
+        itemFilterButton = findViewById(R.id.filter_btn);
 
 
         //item_filter_btn = findViewById(R.id.filter);
@@ -118,12 +121,14 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
             switch (item.getItemId()) {
                 case R.id.home:
+                    itemFilterButton.setVisibility(View.VISIBLE);
                     //item_filter_btn.setVisibility(View.VISIBLE);
                     toolbar_home.setNavigationIcon(R.drawable.search);
                     HomeFragment homeFragment = new HomeFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
                     return true;
                 case R.id.calendar:
+                    itemFilterButton.setVisibility(View.GONE);
                     CalendarFragment calendarFragment = new CalendarFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,calendarFragment).commit();
                     //item_filter_btn.setVisibility(View.GONE);
@@ -132,6 +137,7 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
                     return true;
                 case R.id.profile:
+                    itemFilterButton.setVisibility(View.GONE);
                     ProfileFragment profileFragment = new ProfileFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,profileFragment).commit();
                     toolbar_home.setNavigationIcon(null);

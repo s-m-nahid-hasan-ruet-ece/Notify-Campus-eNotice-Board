@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ public class SignUpProfilePic extends Fragment {
     static int REQUESCODE = 1 ;
     public  static final int RESULT_OK = -1;
     Uri pickedImgUri=null ;
+    ImageView profile_pic;
 
 
     SignUpProfilePicResponse callback;
@@ -66,7 +68,7 @@ public class SignUpProfilePic extends Fragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.signup_fragment_pro_pic,container,false);
 
-        ImageView profile_pic = (ImageView)view.findViewById(R.id.profile_pic);
+        profile_pic = (ImageView)view.findViewById(R.id.profile_pic);
         Button upload_btn = (Button)view.findViewById(R.id.upload_button);
         TextView skip_opt = (TextView)view.findViewById(R.id.skip_text);
 
@@ -82,6 +84,8 @@ public class SignUpProfilePic extends Fragment {
                 else
                 {
                     openGallery();
+
+
                 }
 
             }
@@ -162,6 +166,8 @@ public class SignUpProfilePic extends Fragment {
 
         if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
             pickedImgUri = data.getData() ;
+            profile_pic.setImageURI(null);
+            profile_pic.setImageURI(pickedImgUri);
         }
 
 

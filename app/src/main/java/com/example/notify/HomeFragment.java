@@ -212,7 +212,7 @@ public class HomeFragment extends Fragment {
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Notification();
+               // Notification();
             }
 
             @Override

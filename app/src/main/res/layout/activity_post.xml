@@ -181,20 +181,39 @@
 
             </LinearLayout>
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="5"
+    android:orientation="vertical">
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/post_text"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="400dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="8dp"
         android:background="@android:color/transparent"
         android:gravity="top"
+        android:layout_weight="2"
         android:hint="@string/label_text"
         android:textColor="@color/black"
         android:textColorHint="#555151" />
+    <ImageView
+        android:id="@+id/post_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:scaleType="fitXY"
+        android:clickable="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/content_description_media"
+        />
+
+</LinearLayout>
+
+
 </LinearLayout>
 
             </androidx.core.widget.NestedScrollView>

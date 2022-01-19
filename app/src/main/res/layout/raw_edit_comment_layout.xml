@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="18"
                 android:orientation="horizontal">
+                <!--
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/photo_video_btn"
                     style="?attr/borderlessButtonStyle"
@@ -39,6 +40,7 @@
                     app:icon="@drawable/photo_icon"
                     app:iconTintMode="multiply"
                     android:focusable="true" />
+                   -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

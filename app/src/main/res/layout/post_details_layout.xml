@@ -193,7 +193,7 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/materialButton"
+                        android:id="@+id/react_btn"
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
@@ -226,6 +226,7 @@
 
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reminder_btn"
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="30dp"
                         android:layout_height="wrap_content"
