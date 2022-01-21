@@ -76,9 +76,8 @@ public class SignupActivity extends AppCompatActivity implements SignupTeacherSt
     {
         isTeacher = flag;
     }
-    public void getTeacherId(String teacherid, String user_designation, String user_dept)
+    public void getTeacherId( String user_designation, String user_dept)
     {
-        id = teacherid;
         designation = user_designation;
         department = user_dept;
     }

@@ -31,7 +31,7 @@ public class SignUpTeacherId extends Fragment {
     signUpTeacherIdResponse callback;
 
     public interface signUpTeacherIdResponse{
-        void getTeacherId(String id, String designation, String dept);
+        void getTeacherId(String designation, String dept);
     }
     @Override
     public void onAttach(@NonNull Context context) {
@@ -58,7 +58,6 @@ public class SignUpTeacherId extends Fragment {
 
 
 
-        TextInputEditText teacher_id = (TextInputEditText)view.findViewById(R.id.teacher_id_field);
         MaterialButton back_btn = (MaterialButton)view.findViewById(R.id.back_btn);
         Button next_btn = (Button)view.findViewById(R.id.next_btn);
         TextView sign_in = (TextView)view.findViewById(R.id.sign_in_option);
@@ -113,13 +112,11 @@ public class SignUpTeacherId extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (!Objects.requireNonNull(teacher_id.getText()).toString().equals("") && !designation[0].equals("") && !department[0].equals("")) {
-                    callback.getTeacherId(teacher_id.getText().toString(), designation[0], department[0]);
+                if (!Objects.requireNonNull( !designation[0].equals("") && !department[0].equals(""))) {
+                    callback.getTeacherId( designation[0], department[0]);
                     fragmentManager[0].beginTransaction().replace(R.id.login_fragment_container,signUpCommon).addToBackStack(null).commit();
                 } else {
-                    if(Objects.requireNonNull(teacher_id.getText()).toString().equals(""))
-                        Toast.makeText(getActivity(),"Enter your ID",Toast.LENGTH_SHORT).show();
-                    else if(designation[0] !=null)
+                    if(designation[0] !=null)
                         Toast.makeText(getActivity(),"Enter your Designation",Toast.LENGTH_SHORT).show();
                     else
                         Toast.makeText(getActivity(),"Enter your Department",Toast.LENGTH_SHORT).show();

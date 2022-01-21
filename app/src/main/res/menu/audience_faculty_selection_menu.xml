@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/option_1"
-        android:title="@string/fac_option_1"
+        android:title="Nothing" />
         app:showAsAction="ifRoom"/>
     <item android:id="@+id/option_2"
-        android:title="@string/fac_option_2"
+        android:title="Nothing" />
         app:showAsAction="ifRoom"/>
     <item android:id="@+id/option_3"
-        android:title="@string/fac_option_3"
+        android:title="Nothing" />
         app:showAsAction="always"/>
     <item android:id="@+id/option_4"
-        android:title="@string/fac_option_4"
+        android:title="Nothing" />
         app:showAsAction="always"/>
 </menu>

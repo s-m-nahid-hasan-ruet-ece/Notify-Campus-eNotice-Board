@@ -25,7 +25,6 @@
             android:theme="@style/Theme.Notify"
             android:textAlignment="center"
             app:navigationIcon="@drawable/search"
-            app:menu="@menu/top_app_bar"
             app:title="@string/page_title"
             app:titleMarginTop="0dp"
             app:titleCentered="true"

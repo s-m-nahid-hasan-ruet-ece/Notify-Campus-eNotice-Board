@@ -2,6 +2,9 @@ package com.example.notify;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.os.Build;
 import android.text.Html;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -10,9 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -26,11 +33,12 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
+public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> implements  FBReactionsDialog.onReactionListener{
 
 
         Context mContext;
         List<PostData> mData ;
+        MaterialButton reactButton;
 
 
 public PostAdapter(Context mContext, List<PostData> mData) {
@@ -69,10 +77,11 @@ public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
     Glide.with(mContext).load(mData.get(position).getPicture()).into(holder.imgPost);
     Glide.with(mContext).load(mData.get(position).getUserPhoto()).into(holder.imgPostProfile);
 
-    holder.reatButton.setOnLongClickListener(new View.OnLongClickListener() {
+    holder.reactBtn.setOnLongClickListener(new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View view) {
-            //getReactionDialog();
+            Toast.makeText(mContext,"React Button Pressed",Toast.LENGTH_SHORT).show();
+          //  getReactionDialog();
             return false;
         }
     });
@@ -90,7 +99,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     TextView userName;
     TextView subject;
     TextView postTime;
-    MaterialButton reatButton,commentButton,reminderButton;
+    MaterialButton reactBtn,commentButton,reminderButton;
     ImageView imgPost;
     ImageView imgPostProfile;
     Chip deadlineChip;
@@ -107,9 +116,12 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         subject = itemView.findViewById(R.id.subject);
         postTime = itemView.findViewById(R.id.post_time);
         deadlineChip = itemView.findViewById(R.id.chip_deadline);
-        reatButton = itemView.findViewById(R.id.react_btn);
+        reactBtn = itemView.findViewById(R.id.react_btn);
         commentButton = itemView.findViewById(R.id.comment_btn);
         reminderButton = itemView.findViewById(R.id.reminder_btn);
+
+
+        reactButton = reactBtn;
 
 
 
@@ -226,7 +238,14 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
   }
 
-public boolean checkEligible(String data, String key)
+
+    private DialogFragment getReactionDialog(){
+        FBReactionsDialog fbReactionsDialog = new FBReactionsDialog();
+        fbReactionsDialog.show(((FragmentActivity)mContext).getSupportFragmentManager(),fbReactionsDialog.getClass().getSimpleName());
+        return fbReactionsDialog;
+    }
+
+    public boolean checkEligible(String data, String key)
 {
     if("All Faculty".equals(key) || "All Department".equals(key) || "All Batch".equals(key) || "All Section".equals(key) )
         return true;
@@ -329,6 +348,55 @@ private String getPostTime(Object time){
     }
 
 }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void onReactionSelected(int reactiontype){
+        switch (reactiontype){
+            case 0:
+                reactButton.setText("Like");
+                reactButton.setIconSize(80);
+                reactButton.setIconTint(ColorStateList.valueOf(mContext.getColor(R.color.white)));
+                reactButton.setTextColor(mContext.getColor(R.color.primary));
+                reactButton.setIconTintMode(PorterDuff.Mode.MULTIPLY);
+                reactButton.setIcon(ContextCompat.getDrawable(mContext,R.drawable.ic_like));
+                break;
+            case 1:
+                reactButton.setText("Love");
+                reactButton.setIconSize(80);
+                reactButton.setIconTint(ColorStateList.valueOf(mContext.getColor(R.color.white)));
+                reactButton.setTextColor(mContext.getColor(R.color.primary));
+                reactButton.setIconTintMode(PorterDuff.Mode.MULTIPLY);
+                reactButton.setIcon(ContextCompat.getDrawable(mContext,R.drawable.ic_heart));
+                break;
+            case 2:
+                reactButton.setText("HaHa");
+                reactButton.setIconSize(80);
+                reactButton.setIconTint(ColorStateList.valueOf(mContext.getColor(R.color.white)));
+                reactButton.setTextColor(mContext.getColor(R.color.primary));
+                reactButton.setIconTintMode(PorterDuff.Mode.MULTIPLY);
+                reactButton.setIcon(ContextCompat.getDrawable(mContext,R.drawable.ic_happy));
+                break;
+            case 3:
+                reactButton.setText("Angry");
+                reactButton.setIconSize(80);
+                reactButton.setIconTint(ColorStateList.valueOf(mContext.getColor(R.color.white)));
+                reactButton.setTextColor(mContext.getColor(R.color.primary));
+                reactButton.setIconTintMode(PorterDuff.Mode.MULTIPLY);
+                reactButton.setIcon(ContextCompat.getDrawable(mContext,R.drawable.ic_angry));
+                break;
+            case 4:
+                reactButton.setText("Sad");
+                reactButton.setIconSize(80);
+                reactButton.setIconTint(ColorStateList.valueOf(mContext.getColor(R.color.white)));
+                reactButton.setTextColor(mContext.getColor(R.color.primary));
+                reactButton.setIconTintMode(PorterDuff.Mode.MULTIPLY);
+                reactButton.setIcon(ContextCompat.getDrawable(mContext,R.drawable.ic_sad));
+                break;
+        }
+    }
+
+
+
 
 
 

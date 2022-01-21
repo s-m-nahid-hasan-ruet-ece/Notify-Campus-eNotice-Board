@@ -28,7 +28,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class MainActivity2 extends AppCompatActivity implements Search.onSearchFragmentListener,
-                                                                HomeFragment.onHomeFragmentListener{
+                                                                HomeFragment.onHomeFragmentListener,
+                                                                CalendarFragment.onCalendarFragmentListener
+                                                                {
 
 
     //private ActionBar toolbar;
@@ -46,6 +48,9 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+       // itemFilterButton = findViewById(R.id.filter_btn);
+       // itemFilterButton.setVisibility(View.GONE);
+
 
         HomeFragment homeFragment = new HomeFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -55,8 +60,6 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
         toolbar_home = (MaterialToolbar)findViewById(R.id.topAppBar);
         setSupportActionBar(toolbar_home);
 
-        toolbar_home.inflateMenu(R.menu.top_app_bar);
-        itemFilterButton = findViewById(R.id.filter_btn);
 
 
         //item_filter_btn = findViewById(R.id.filter);
@@ -121,14 +124,14 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
             switch (item.getItemId()) {
                 case R.id.home:
-                    itemFilterButton.setVisibility(View.VISIBLE);
+                   // itemFilterButton.setVisibility(View.GONE);
                     //item_filter_btn.setVisibility(View.VISIBLE);
                     toolbar_home.setNavigationIcon(R.drawable.search);
                     HomeFragment homeFragment = new HomeFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
                     return true;
                 case R.id.calendar:
-                    itemFilterButton.setVisibility(View.GONE);
+                    //itemFilterButton.setVisibility(View.GONE);
                     CalendarFragment calendarFragment = new CalendarFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,calendarFragment).commit();
                     //item_filter_btn.setVisibility(View.GONE);
@@ -137,7 +140,7 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
                     return true;
                 case R.id.profile:
-                    itemFilterButton.setVisibility(View.GONE);
+                    //itemFilterButton.setVisibility(View.GONE);
                     ProfileFragment profileFragment = new ProfileFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,profileFragment).commit();
                     toolbar_home.setNavigationIcon(null);
@@ -159,11 +162,6 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.top_app_bar, menu);
-        return  true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -182,8 +180,14 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
         return super.onOptionsItemSelected(item);
     }
-
-
+/*
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_app_bar,menu);
+        return true;
+    }
+*/
     @Override
     public void sendPostList(List<PostData>  posts) {
         postList = posts;
@@ -203,4 +207,6 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
 
         Objects.requireNonNull(((AppCompatActivity) this).getSupportActionBar()).show();
     }
+
+
 }

@@ -128,8 +128,6 @@ public class HomeFragment extends Fragment {
         databaseReferenceUser = firebaseDatabase.getReference("Users");
         CircularImageView profile_pic =(CircularImageView) view.findViewById(R.id.user_profile_pic);
         endText = view.findViewById(R.id.end_text);
-        postList = new ArrayList<>();
-
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -161,8 +159,10 @@ public class HomeFragment extends Fragment {
 
 
         //Toast.makeText(getActivity(),userData.getFaculty(),Toast.LENGTH_SHORT).show();
+        changeStatusBar();
 
        // Query query = databaseReference.orderByChild("faculty").equalTo("CSE");
+        postList = new ArrayList<>();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
@@ -197,8 +197,6 @@ public class HomeFragment extends Fragment {
                 Log.e("postSIZE","post size"+postList.size());
                 postAdapter = new PostAdapter(getActivity(),postList);
                 postRecyclerView.setAdapter(postAdapter);
-
-
             }
 
             @Override

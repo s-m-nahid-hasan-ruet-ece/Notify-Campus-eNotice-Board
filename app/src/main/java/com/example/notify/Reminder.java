@@ -110,6 +110,12 @@ public class Reminder extends AppCompatActivity {
             }
         });
 
+        toolbar_post.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         done_btn.setOnClickListener(new View.OnClickListener() {
             @Override

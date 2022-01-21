@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,6 +89,17 @@ public class Search extends Fragment{
 
         List<PostData> postList = callback.getPostList();
 
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener( new View.OnKeyListener()
+        {
+            @Override
+            public boolean onKey( View v, int keyCode, KeyEvent event )
+            {
+               changeStatusBar();
+                return false;
+            }
+        } );
 
 
 
@@ -214,6 +226,8 @@ public class Search extends Fragment{
 
 
     }
+
+
 
 
 

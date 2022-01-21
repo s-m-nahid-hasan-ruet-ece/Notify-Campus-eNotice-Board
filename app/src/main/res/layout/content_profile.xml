@@ -11,20 +11,20 @@
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/profile_pic"
-            android:layout_width="188dp"
-            android:layout_height="188dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:background="#009E7575"
             android:elevation="8dp"
             android:translationZ="5dp"
-            app:civ_border_color="#68B2EA"
+            app:civ_border_color="#FFFFFF"
             app:civ_border_width="10dp"
             app:civ_shadow="true"
             app:civ_shadow_color="#404042"
             app:civ_shadow_radius="1.5dp"
-            app:srcCompat="@drawable/profile" />
+            app:srcCompat="@drawable/media" />
 
         <TextView
             android:id="@+id/user_name"
@@ -33,21 +33,14 @@
             android:layout_gravity="center"
             android:layout_weight="3"
             android:gravity="bottom"
-            android:text="Milton Kumar Kundu"
+            android:text="Mr John"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="3dp"
-            android:layout_gravity="center"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:text="Assistant Professor"
-            android:textColor="@color/black"
-            android:textSize="13dp" />
+
 
         <TextView
+            android:id="@+id/dept"
             android:layout_width="wrap_content"
             android:layout_height="3dp"
             android:layout_gravity="center"

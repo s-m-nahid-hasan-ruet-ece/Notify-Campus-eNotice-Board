@@ -63,7 +63,7 @@
                     android:id="@+id/profile_pic"
                     android:layout_width="57dp"
                     android:layout_height="57dp"
-                    app:srcCompat="@drawable/profile"
+                    app:srcCompat="@drawable/media"
                     app:civ_border_color="#3f51b5"
                     android:background="#FFFFFF"
                     android:layout_weight="1"
@@ -232,7 +232,7 @@
         android:orientation="horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:weightSum="5"
+        android:weightSum="2"
         android:background="#FFFFFF"
         android:layout_gravity="bottom">
 
@@ -272,6 +272,7 @@
             app:icon="@drawable/photo_icon"
             app:iconTintMode="multiply"
             android:focusable="true" />
+        <!--
         <com.google.android.material.button.MaterialButton
             android:id="@+id/file_btn"
             style="?attr/borderlessButtonStyle"
@@ -326,7 +327,7 @@
             app:icon="@drawable/poll_icon"
             app:iconTintMode="multiply"
             android:focusable="true" />
-
+-->
 
     </LinearLayout>
 

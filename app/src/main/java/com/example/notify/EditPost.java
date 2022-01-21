@@ -130,9 +130,7 @@ public class EditPost extends Fragment{
 
         MaterialButton camera_btn = (MaterialButton)view.findViewById(R.id.camera_btn);
         MaterialButton photo_btn = (MaterialButton)view.findViewById(R.id.photo_video_btn);
-        MaterialButton file_btn= (MaterialButton)view.findViewById(R.id.file_btn);
-        MaterialButton audio_btn = (MaterialButton)view.findViewById(R.id.audio_btn);
-        MaterialButton poll_btn = (MaterialButton)view.findViewById(R.id.poll_btn);
+
 
         CircularImageView profile_pic = (CircularImageView)view.findViewById(R.id.profile_pic);
         TextView user_name = (TextView)view.findViewById(R.id.user_name);
@@ -306,9 +304,8 @@ public class EditPost extends Fragment{
                 }
             }
         });
-        ///
 
-        /// Bottom Button Response
+
         camera_btn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
@@ -325,34 +322,6 @@ public class EditPost extends Fragment{
                 checkAndRequestForPermission(1);
             }
         });
-
-        file_btn.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(),"File",Toast.LENGTH_SHORT).show();
-                checkAndRequestForPermission(2);
-            }
-        });
-
-        audio_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(),"Record",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        poll_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getActivity(),"Poll",Toast.LENGTH_SHORT).show();
-                ncallback.onBottomButtionClick("Poll Button Selected!");
-            }
-        });
-        ///
-
-
-
 
 
         return view;
@@ -538,9 +507,9 @@ public class EditPost extends Fragment{
                 .setPositiveButton("Edit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        DeadlineFragment deadlineFragment = new DeadlineFragment();
+                        AudienceFragment audienceFragment = new AudienceFragment();
                         FragmentManager fragmentManager = getParentFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.fragment_container,deadlineFragment).addToBackStack(null).commit();
+                        fragmentManager.beginTransaction().replace(R.id.fragment_container,audienceFragment).addToBackStack(null).commit();
                     }
                 })
                 .show();

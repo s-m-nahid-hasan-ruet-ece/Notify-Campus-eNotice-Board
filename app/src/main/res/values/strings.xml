@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Notify</string>
-    <string name="page_title">Notify</string>
+    <string name="app_name">eNotice Board</string>
+    <string name="page_title">eNotice Board</string>
     <string name="more">More</string>
     <string name="content_description_more">This is the navigation drawer option</string>
     <string name="search">Search</string>
@@ -9,7 +9,7 @@
     <string name="profile">Profile</string>
     <string name="home">Home</string>
     <string name="calendar">Calendar</string>
-    <string name="title">Milton Kumar Kundu</string>
+    <string name="title">Mr John</string>
     <string name="icon_todo">TODO</string>
     <string name="post">Create Post</string>
     <string name="content_description_media">image_post</string>
@@ -28,12 +28,11 @@
     <string name="text">Text</string>
     <string name="voice">Voice</string>
     <string name="label">Course Title</string>
-    <string name="name_of_dept"><![CDATA[Dept. of Electrical & Computer Engineering]]></string>
-    <string name="name_of_university"><![CDATA[Rajshahi University of Engineering & Technology]]></string>
+    <string name="name_of_dept"><![CDATA[Dept. of Computer Science & Engineering]]></string>
+    <string name="name_of_university"><![CDATA[Name of University]]></string>
     <string name="email">mk1234@gmail.com</string>
     <string name="edit">Edit</string>
     <string name="logout">Logout</string>
-    <string name="notification_text">New announcement from Milton Kumar Kundu</string>
     <string name="notification_time_text">1 min ago</string>
     <string name="notification_page_title">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -57,29 +56,6 @@
     <string name="deadline_sub_answer">You can set dealine time of the task of the notice. Your audience will find it helpful.</string>
     <string name="faculty_name">Faculty</string>
     <string name="dept_name">Department</string>
-    <string name="option_1">All</string>
-    <string name="option_2">ECE</string>
-    <string name="option_3">CE</string>
-    <string name="option_4">ME</string>
-    <string name="fac_option_1">ALL</string>
-    <string name="fac_option_2">ECE</string>
-    <string name="fac_option_3">CE</string>
-    <string name="fac_option_4">ME</string>
-    <string name="dept_option_1">ALL</string>
-    <string name="dept_option_2">ECE</string>
-    <string name="dept_option_3">CSE</string>
-    <string name="dept_option_4">EEE</string>
-    <string name="dept_option_5">ETE</string>
-    <string name="dept_option_6">CE</string>
-    <string name="dept_option_7">BECM</string>
-    <string name="dept_option_8">URP</string>
-    <string name="dept_option_9">Arch</string>
-    <string name="dept_option_10">ME</string>
-    <string name="dept_option_11">IPE</string>
-    <string name="dept_option_12">MTE</string>
-    <string name="dept_option_13">GCE</string>
-    <string name="dept_option_14">MSE</string>
-    <string name="dept_option_15">CFPE</string>
     <string name="series_option_1">ALL</string>
     <string name="series_option_2">14</string>
     <string name="series_option_3">15</string>

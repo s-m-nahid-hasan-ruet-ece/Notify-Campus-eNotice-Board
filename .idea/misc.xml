@@ -125,6 +125,66 @@
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify2/app/src/main/res/menu/bottom_app_bar.xml" value="0.12894736842105264" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify2/app/src/main/res/menu/top_app_bar.xml" value="0.12894736842105264" />
         <entry key="..\:/Users/smhas/AndroidStudioProjects/Notify2/app/src/main/res/menu/top_app_bar_post.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_login.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_main.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_main2.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_notification.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_post.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_post_details.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_reminder.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_signup.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_test.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_test_kotline.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/activity_user_profile.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/add_profile_picture.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/app_bar_home.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/audience_select_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/bottom_navigation_bar.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/calendar_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/content_calendar.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/content_home.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/content_notification.xml" value="0.33" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/content_profile.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/dialogue_reactions.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/dropdown_item.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/fragment_calendar.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/fragment_home_fragment.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/fragment_notification_fragment.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/fragment_test_container.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/fragment_user_profile_fragment.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/login_fragment.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/login_teacher_student_fragment.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/post_audience_layout.xml" value="0.21" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/post_audience_selection_dialog.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/post_container_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/post_deadline_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/post_details_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/post_subject_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/post_text.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/raw_comment_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/raw_edit_comment_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/raw_edit_post_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/raw_notification_item.xml" value="0.21" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/raw_post_just_text.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/raw_post_with_audio.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/raw_post_with_image.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/search_fragment.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/sign_up_teacher_id.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/signup_fragment_common.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/signup_fragment_pro_pic.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/signup_fragment_teacher.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/signup_studentid.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/signup_teacher_student_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/signup_verify.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/test_fragment.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/text_post_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/top_app_bar_home.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/user_profile_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/layout/verification_code_layout.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/menu/audience_dept_selection_menu.xml" value="0.1" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/menu/audience_faculty_selection_menu.xml" value="0.1" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/menu/top_app_bar.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/smhas/AndroidStudioProjects/eNoticeBoard/app/src/main/res/menu/top_app_bar_post.xml" value="0.1361111111111111" />
       </map>
     </option>
   </component>
