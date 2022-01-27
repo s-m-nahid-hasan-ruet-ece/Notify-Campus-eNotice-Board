@@ -281,9 +281,10 @@ public class HomeFragment extends Fragment {
                     userFaculty = userData.getFaculty();
                     userBatch = userData.getBatch();
                     userSection = userData.getSection();
+                    userDepartment = userData.getDepartment();
 
 
-                    Log.e("func","current user updated");
+                    Log.e("func","current user updated: "+userEmail+"  "+userFaculty+" "+userBatch+" "+userSection+" "+userDepartment);
 
 
                 }

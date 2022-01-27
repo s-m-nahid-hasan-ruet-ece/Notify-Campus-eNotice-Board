@@ -61,7 +61,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:20.0.0'
     implementation 'com.google.firebase:firebase-database:20.0.3'
 
-    
+
     implementation 'io.github.amrdeveloper:reactbutton:2.0.3'
 
 
@@ -77,6 +77,5 @@ dependencies {
 
 
 }
-
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.android.application'

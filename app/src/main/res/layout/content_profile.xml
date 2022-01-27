@@ -11,8 +11,8 @@
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/profile_pic"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="330dp"
+            android:layout_height="330dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
