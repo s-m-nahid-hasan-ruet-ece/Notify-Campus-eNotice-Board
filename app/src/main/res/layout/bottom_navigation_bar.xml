@@ -6,7 +6,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity2">
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -32,7 +32,26 @@
 
 
 
-
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fab"
+                app:srcCompat="@drawable/plus_icon"
+                android:contentDescription="@string/app_name"
+                android:focusable="auto"
+                app:backgroundTint="#7CB6F3"
+                android:elevation="8dp"
+                app:borderWidth="0dp"
+                android:layout_gravity="center"
+                app:fabSize="auto"
+                app:hoveredFocusedTranslationZ="16dp"
+                app:layout_anchor="@+id/bottomAppBar"
+                app:layout_anchorGravity="center"
+                app:rippleColor="#1B3449"
+                android:scaleType="center"
+                android:layout_marginBottom="0dp"
+                app:pressedTranslationZ="12dp"/>
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>/
     </com.google.android.material.bottomappbar.BottomAppBar>

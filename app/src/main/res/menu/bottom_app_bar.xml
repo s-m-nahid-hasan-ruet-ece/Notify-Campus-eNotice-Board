@@ -18,8 +18,21 @@
         android:iconTint="@color/white"
         android:icon="@drawable/calendar_icon_white"
         android:contentDescription="@string/content_description_more"
-         />
+        />
+    <item
+        android:id="@+id/post"
+        android:contentDescription="@string/content_description_search"
+        android:enabled="false"
+        android:title="" />
 
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/notification_icon_white"
+        android:title="@string/notification"
+        android:enabled="true"
+        android:iconTint="@color/white"
+        android:contentDescription="@string/content_description_search"
+        />
 
     <item
         android:id="@+id/profile"

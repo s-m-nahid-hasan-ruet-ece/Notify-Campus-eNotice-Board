@@ -164,6 +164,7 @@ public class HomeFragment extends Fragment {
 
        // Query query = databaseReference.orderByChild("faculty").equalTo("CSE");
 
+        postList = new ArrayList<>();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
             @Override

@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
     android:focusable="true">
 
     <LinearLayout
@@ -99,27 +100,71 @@
             android:translationZ="10dp"
             android:elevation="14dp"
             />
-        <TextView
-            android:id="@+id/hint_text1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/subject"
-            android:textColor="@color/black"
-            android:textSize="17sp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            />
-        <TextView
-            android:id="@+id/hint_text2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/noticeText"
-            android:textColor="@color/black"
-            android:textSize="17sp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="8dp"
-            />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/name"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:icon="@drawable/search"
+            app:iconTint="#605E61"
+            android:text="Name"
+            android:textAlignment="textStart"
+            app:iconPadding="20dp"
+            android:layout_marginLeft="20dp"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:rippleColor="#E91E63"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:foreground="?android:attr/selectableItemBackground"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/subject"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginLeft="20dp"
+            app:icon="@drawable/search"
+            app:iconTint="#605E61"
+            android:text="Subject"
+            android:textAlignment="textStart"
+            app:iconPadding="20dp"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:rippleColor="#E91E63"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:foreground="?android:attr/selectableItemBackground"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/post_text"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginLeft="20dp"
+            app:icon="@drawable/search"
+            app:iconTint="#605E61"
+            android:text="Notice text"
+            android:textAlignment="textStart"
+            app:iconPadding="20dp"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:rippleColor="#E91E63"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:foreground="?android:attr/selectableItemBackground"/>
+        </LinearLayout>
 
 
         <androidx.core.widget.NestedScrollView

@@ -28,7 +28,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class MainActivity2 extends AppCompatActivity implements Search.onSearchFragmentListener,
-                                                                HomeFragment.onHomeFragmentListener{
+                                                                HomeFragment.onHomeFragmentListener,
+                                                                CalendarFragment.onCalendarFragmentListener {
 
 
     //private ActionBar toolbar;
@@ -99,6 +100,15 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
             }
         });
 
+
+        FloatingActionButton fab_btn = (FloatingActionButton)findViewById(R.id.fab);
+
+        fab_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startPostActivity();
+            }
+        });
         Configuration config = getResources().getConfiguration();
 
        // getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
@@ -133,8 +143,12 @@ public class MainActivity2 extends AppCompatActivity implements Search.onSearchF
                     fragmentManager.beginTransaction().replace(R.id.fragment_container,calendarFragment).commit();
                     //item_filter_btn.setVisibility(View.GONE);
                     toolbar_home.setNavigationIcon(null);
-
-
+                    return true;
+                case R.id.notification:
+                    itemFilterButton.setVisibility(View.GONE);
+                    toolbar_home.setNavigationIcon(null);
+                    NotificationFragment notificationFragment = new NotificationFragment();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container,notificationFragment).commit();
                     return true;
                 case R.id.profile:
                     itemFilterButton.setVisibility(View.GONE);

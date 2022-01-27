@@ -370,14 +370,23 @@ public class PostDetails extends AppCompatActivity implements FBReactionsDialog.
 
         if (day < 7) {
             if (day != 0) {
-                return " " + day + " days ago";
+                if(day==1)
+                    return day + " day ago";
+                else
+                    return day + " days ago";
             }
             if (hour != 0) {
-                return " " + hour + " hours ago";
+                if(hour==1)
+                    return hour + " hour ago";
+                else
+                    return hour + " hours ago";
             } else if (min != 0) {
-                return " " + min + " mins ago";
+                if(min==1)
+                    return min + " min ago";
+                else
+                    return min + " mins ago";
             } else
-                return " Just now";
+                return "Just now";
         } else {
             Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
             calendar.setTimeInMillis(y);

@@ -74,14 +74,40 @@ public class Search extends Fragment{
         MaterialButton backButton = view.findViewById(R.id.back_btn);
         EditText searchText  = view.findViewById(R.id.search_text);
 
-        TextView hint1 = view.findViewById(R.id.hint_text1);
-        TextView hint2 = view.findViewById(R.id.hint_text2);
+        MaterialButton nameSearch = (MaterialButton)view.findViewById(R.id.name);
+        MaterialButton subjectSearch = (MaterialButton)view.findViewById(R.id.subject);
+        MaterialButton noticeTextSearch = (MaterialButton)view.findViewById(R.id.post_text);
+
         TextView searchHint = view.findViewById(R.id.search_hint);
         endText = view.findViewById(R.id.end_text);
 
         postRecyclerView  = view.findViewById(R.id.postRV);
         postRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         postRecyclerView.setHasFixedSize(true);
+
+        nameSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchText.setText("Name: ");
+                searchText.setSelection(searchText.getText().length());
+            }
+        });
+        subjectSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchText.setText("Subject: ");
+                searchText.setSelection(searchText.getText().length());
+            }
+        });
+        noticeTextSearch.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                searchText.setText("Notice text: ");
+                searchText.setSelection(searchText.getText().length());
+            }
+        });
+
 
 
         endText.setVisibility(view.GONE);
@@ -96,8 +122,9 @@ public class Search extends Fragment{
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 hideKeyboard();
 
-                hint1.setVisibility(View.GONE);
-                hint2.setVisibility(View.GONE);
+                nameSearch.setVisibility(View.GONE);
+                subjectSearch.setVisibility(View.GONE);
+                noticeTextSearch.setVisibility(View.GONE);
 
                 searchHint.setText("Results on:  "+ searchText.getText().toString());
                 searchHint.setTypeface(Typeface.DEFAULT);

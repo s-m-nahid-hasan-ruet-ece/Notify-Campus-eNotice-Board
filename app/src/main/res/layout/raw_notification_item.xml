@@ -1,12 +1,8 @@
-<com.google.android.material.card.MaterialCardView xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="0dp"
-    app:cardElevation="1dp"
-    app:cardCornerRadius="2dp"
-    app:strokeWidth="0.2dp"
-    app:strokeColor="@color/back_button"
+    android:background="#FFFFFF"
     android:clickable="true"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,29 +12,58 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
+        android:layout_marginTop="5dp"
         android:weightSum="5"
+        android:clickable="true"
+        android:focusable="true"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:layout_weight="4"
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="10dp"
+            android:background="#009E7575"
+            android:elevation="1dp"
+            app:civ_border_color="#FFFFFF"
+            app:civ_border_width="1dp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="#EAEAEA"
+            app:civ_shadow_radius="1.5dp"
+            app:srcCompat="@drawable/media" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/notification_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="4"
             android:text="@string/notification_text"
             android:textSize="15sp"
             android:textColor="#424143"/>
         <TextView
+            android:id="@+id/post_time"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:text="@string/notification_time_text"
-            android:textSize="10sp"
-            android:layout_marginTop="-2dp"
-            android:gravity="center"
+            android:textSize="12sp"
+            android:gravity="bottom"
             android:layout_weight="1"
-            android:textColor="#423F3F"/>
-
+            android:textColor="#787878"/>
+        </LinearLayout>
 
     </LinearLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
