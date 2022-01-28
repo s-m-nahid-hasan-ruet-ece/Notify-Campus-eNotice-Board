@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -60,7 +62,7 @@ public class HomeFragment extends Fragment {
     HomeFragment.onHomeFragmentListener callback;
 
 
-
+    ShimmerFrameLayout shimmerFrameLayout;
     RecyclerView postRecyclerView ;
     PostAdapter postAdapter ;
     FirebaseDatabase firebaseDatabase;
@@ -76,6 +78,7 @@ public class HomeFragment extends Fragment {
     public interface onHomeFragmentListener
     {
         void  sendPostList(List<PostData> posts);
+        String getUserDept();
     }
 
     @Override
@@ -127,8 +130,11 @@ public class HomeFragment extends Fragment {
         databaseReference = firebaseDatabase.getReference("Posts");
         databaseReferenceUser = firebaseDatabase.getReference("Users");
         CircularImageView profile_pic =(CircularImageView) view.findViewById(R.id.user_profile_pic);
+        shimmerFrameLayout = view.findViewById(R.id.shimmer);
         endText = view.findViewById(R.id.end_text);
         postList = new ArrayList<>();
+
+        shimmerFrameLayout.startShimmer();
 
 
 
@@ -136,8 +142,9 @@ public class HomeFragment extends Fragment {
         currentUser = mAuth.getCurrentUser();
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(profile_pic);
-        getUserData();
-
+        //getUserData();
+        userDepartment = getArguments().getString("dept");
+        Log.e("UserDept",userDepartment+" ");
 
 
         Button editText = view.findViewById(R.id.create_post);
@@ -158,6 +165,8 @@ public class HomeFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
+       // getUserData();
+        endText.setVisibility(View.GONE);
 
 
         //Toast.makeText(getActivity(),userData.getFaculty(),Toast.LENGTH_SHORT).show();
@@ -170,7 +179,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-               // getUserData();
+                //getUserData();
                 for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
 
                     PostData post = postsnap.getValue(PostData.class);
@@ -190,14 +199,37 @@ public class HomeFragment extends Fragment {
                 callback.sendPostList(postList);
 
 
-                if(postList.size()==0)
-                    endText.setText("No Results Found!");
-                else
-                    endText.setText("End of Results");
+
 
                 Log.e("postSIZE","post size"+postList.size());
+
+
+
                 postAdapter = new PostAdapter(getActivity(),postList);
                 postRecyclerView.setAdapter(postAdapter);
+
+
+                postRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false){
+
+                    @Override
+                    public void onLayoutCompleted(RecyclerView.State state) {
+                        super.onLayoutCompleted(state);
+
+
+                        shimmerFrameLayout.stopShimmer();
+                        shimmerFrameLayout.setVisibility(View.GONE);
+
+                        endText.setVisibility(View.VISIBLE);
+                        if(postList.size()==0)
+                            endText.setText("No Results Found!");
+
+                        else
+                            endText.setText("End of Results");
+
+
+                    }
+                });
+
 
 
             }
@@ -302,7 +334,7 @@ public class HomeFragment extends Fragment {
     public boolean isEligibleForPost(PostData post)
     {
         //Toast.makeText(getActivity(),post.getFaculty()+ " vs "+ userFaculty,Toast.LENGTH_SHORT).show();
-        Log.e("isEligible",post.getFaculty()+" vs "+userFaculty);
+        Log.e("isEligible",post.getDepartment()+" vs "+userDepartment);
 
            if(post.getFaculty().equals(userFaculty) || post.getDepartment().equals(userDepartment)|| post.getBatch().equals(userBatch) || post.getSection().equals(userSection))
                return true;

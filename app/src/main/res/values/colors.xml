@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="shadow">#D9DADC</color>
+    <color name="gray">#C3C4C5</color>
     <color name="white">#FFFFFFFF</color>
 
 
@@ -32,9 +33,13 @@
     <color name="toAppBarColor">#58A4E6</color>
 
 
-
     <color name="primary">#0094E4</color>
     <color name="secondary">#00BCD5</color>
     <color name="hint">#505050</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
 
 </resources>

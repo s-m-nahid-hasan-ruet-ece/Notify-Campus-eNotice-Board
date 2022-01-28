@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:opticalInsetLeft="10dp"
+    android:opticalInsetBottom="10dp"
+    android:opticalInsetRight="20dp"
+    android:opticalInsetTop="10dp">
+    <corners   android:radius="100dp"/>
+    <solid android:color="@color/gray"/>
+</shape>
